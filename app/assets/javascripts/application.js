@@ -1,4 +1,6 @@
 //= require jquery
+//= require bootstrap
+//= require_tree .
 
 $(function() {
   $("#credit-card input, #credit-card select").attr("disabled", false);

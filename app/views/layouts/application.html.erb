@@ -7,34 +7,11 @@
     <%= javascript_tag "Stripe.publishableKey = '#{STRIPE_PUBLISHABLE_KEY}';" %>
     <%= javascript_include_tag :application %>
     <%= csrf_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <h3><%= link_to "Monospace", root_path %></h3>
-          <ul class="nav">
-            <% if current_user %>
-              <li>
-                <%= link_to "Edit Profile", edit_profile_path %>
-              </li>
-              <li>
-                <%= link_to "Sign Out", sign_out_path %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to "Sign In", sign_in_path %>
-              </li>
-              <li>
-                <%= link_to "Register", register_path %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <%= render 'layouts/header' %>
     <div class="main container">
       <div class="row">
         <div class="span6 columns">
