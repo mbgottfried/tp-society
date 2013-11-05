@@ -42,3 +42,5 @@ end
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+ruby '2.0.0'
