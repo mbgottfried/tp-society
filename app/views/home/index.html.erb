@@ -1,9 +1,18 @@
-<div class="jumbotron">
 <% if current_user %>
-  <p>Shouldn't you be coding?</p>
-  <p><%= link_to "Edit Profile", edit_profile_path %>
-<% else %>
-  <h1>Toilet Paper Society!</h1>
-  <p><%= link_to "Join Today!", register_path %></p>
+	<div class="container">
+		  <p>Shouldn't you be coding?</p>
+		  <p><%= link_to "Edit Profile", edit_profile_path %>
+	</div>
+		<% else %>
+		<div id="home-hero">
+			<div class="container">
+				<div class="col-md-8 dgcwypd">
+			  		<h1>DON'T GET CAUGHT</h1>
+			  		<h2>WITH YOUR PANTS DOWN</h2>
+			  	</div>
+		  		<div class="col-md-4 join-home"
+		  			<p><%= link_to "Join Today!", register_path %></p>
+		  		</div>
+			</div>
+		</div>
 <% end %>
-</div>
