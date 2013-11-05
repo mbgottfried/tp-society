@@ -1,6 +1,6 @@
-<div class="row">
-  <div class="span6 columns">
-    <fieldset>
+<div class="panel panel-default">
+  <div class="panel-body">
+<fieldset>
       <%= form_for user, :html => {:class => 'form-stacked'} do |f| %>
         <% if user.errors.any? %>
           <div class="alert-message block-message error">
@@ -13,34 +13,34 @@
           </div>
         <% end %>
 
-        <div class="clearfix">
+        <div class="form-group">
           <%= f.label :name %>
           <div class="input">
-            <%= f.text_field :name, :class => "field" %>
+            <%= f.text_field :name, :class => "field", class: "form-control" %>
           </div>
         </div>
 
-        <div class="clearfix">
+        <div class="form-group">
           <%= f.label :email %>
           <div class="input">
-            <%= f.text_field :email, :class => "field" %>
+            <%= f.text_field :email, :class => "field", class: "form-control" %>
           </div>
         </div>
 
-        <div class="clearfix">
+        <div class="form-group">
           <%= f.label :password %>
           <div class="input">
-            <%= f.password_field :password, :class => "field" %>
+            <%= f.password_field :password, :class => "field", class: "form-control" %>
             <% if defined? editing %>
               <span class="help-block">Leave blank to keep your current password</span>
             <% end %>
           </div>
         </div>
 
-        <div class="clearfix">
+        <div class="form-group">
           <%= f.label :password_confirmation %>
           <div class="input">
-            <%= f.password_field :password_confirmation, :class => "field" %>
+            <%= f.password_field :password_confirmation, :class => "field", class: "form-control" %>
           </div>
 
           <%= f.hidden_field :stripe_token %>
@@ -71,22 +71,22 @@
           </div>
 
           <!-- these fields are disabled before submission and are never transmitted back to rails -->
-          <div class="clearfix">
-            <%= label_tag :credit_card_number %>
+          <div class="form-group">
+            <span class="glyphicon glyphicon-lock"></span> <%= label_tag :credit_card_number, "Credit Card Number" %>
             <div class="input">
-              <%= text_field_tag :credit_card_number, params[:credit_card_number], :class => "field", :disabled => true %>
+              <%= text_field_tag :credit_card_number, params[:credit_card_number], :class => "field form-control", :disabled => true %>
             </div>
           </div>
 
-          <div class="clearfix">
+          <div class="form-group">
             <%= label_tag :cvv, "Security code (CVV)" %>
             <div class="input">
-              <%= text_field_tag :cvv, params[:cvv], :class => "small", :disabled => true %>
+              <%= text_field_tag :cvv, params[:cvv], :class => "small form-control", :disabled => true %>
             </div>
           </div>
 
-          <div class="clearfix">
-            <%= label_tag :expiry_date %>
+          <div class="form-group">
+            <%= label_tag :expiry_date, "Expiration Date" %>
             <div class="input">
               <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => true}, {:class => "small"} %>
             </div>

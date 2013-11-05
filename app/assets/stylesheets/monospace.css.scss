@@ -2,6 +2,9 @@
 
 body { font-family: "Open Sans",helvetica, arial, sans-serif;}
 
+.center {
+	text-align: center;
+}
 
 div.main {
   padding-top:80px;
@@ -184,4 +187,13 @@ footer h5 {
 	font-family: "Open Sans",helvetica, arial, sans-serif;
 	font-weight: 600;
 	padding: 20px 0 0;
+}
+
+#register {
+	margin: 200px 0;
+}
+
+.heading {
+	margin: 0 0 30px;
+	color: #0c2638;
 }
