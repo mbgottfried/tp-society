@@ -13,21 +13,21 @@
           </div>
         <% end %>
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
           <%= f.label :name %>
           <div class="input">
             <%= f.text_field :name, :class => "field", class: "form-control" %>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
           <%= f.label :email %>
           <div class="input">
             <%= f.text_field :email, :class => "field", class: "form-control" %>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
           <%= f.label :password %>
           <div class="input">
             <%= f.password_field :password, :class => "field", class: "form-control" %>
@@ -37,7 +37,7 @@
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
           <%= f.label :password_confirmation %>
           <div class="input">
             <%= f.password_field :password_confirmation, :class => "field", class: "form-control" %>
@@ -71,31 +71,27 @@
           </div>
 
           <!-- these fields are disabled before submission and are never transmitted back to rails -->
-          <div class="form-group">
+          <div class="form-group col-md-6">
             <span class="glyphicon glyphicon-lock"></span> <%= label_tag :credit_card_number, "Credit Card Number" %>
-            <div class="input">
-              <%= text_field_tag :credit_card_number, params[:credit_card_number], :class => "field form-control", :disabled => true %>
-            </div>
+              <%= text_field_tag :credit_card_number, params[:credit_card_number], :class => "field form-control ccn", :disabled => true %>
+          </div>
+          <div class="form-group col-md-3">
+            <%= label_tag :cvv, "Security code (CVV)" %>  
+            <%= text_field_tag :cvv, params[:cvv], :class => "field form-control cvv", :disabled => true %>
           </div>
 
-          <div class="form-group">
-            <%= label_tag :cvv, "Security code (CVV)" %>
-            <div class="input">
-              <%= text_field_tag :cvv, params[:cvv], :class => "small form-control", :disabled => true %>
-            </div>
-          </div>
-
-          <div class="form-group">
+          <div class="form-group col-md-3">
             <%= label_tag :expiry_date, "Expiration Date" %>
             <div class="input">
               <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => true}, {:class => "small"} %>
             </div>
             <!-- empty -->
           </div>
-          <span class="note">
+          </div>
+          <div class="note">
             Your credit card details will be sent directly to our payment processor
-          </span>
-        </div>
+          </div>
+
 
         <div class="actions">
           <%= f.submit((defined?(editing) ? "Update" : "Register"), :class => "btn primary") %>
