@@ -71,22 +71,90 @@ div.topbar ul.nav {
 
 h1 {
 	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
-	color: #ffffff;
 	font-size: 55px;
-	text-shadow: 0px 0px 7px #000000;
 	font-weight: 900;
 	margin: 0;
+	text-transform: uppercase;
 }
 
 h2 {
 	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
-	color: #ffffff;
 	font-size: 44.5px;
-	text-shadow: 0px 0px 7px #000000;
 	font-weight: 600;
 	margin: 0;
+	text-transform: uppercase;
+}
+
+#home-hero h1, #home-hero h2 {
+	text-shadow: 0px 0px 7px #000000;
+	color: #ffffff;
+}
+
+h3 {
+	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: 400;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+#home-hero .container {
+	padding: 120px 0 0;
 }
 
 .dgcwypd {
-	margin: 120px 0 0;
+
+}
+
+.join-home {
+	text-align: center;
+	margin: 30px 0 0;
+}
+
+.btn-get-started {
+	background: #b2293b;
+	color: #ffffff;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: 600;
+	transition: background .4s;
+	border-radius: 0px;
+}
+
+.btn-get-started:hover {
+	color: #ffffff;
+	background: #801422;
+}
+
+#quality-banner {
+	text-align: center;
+	background: #022437;
+	color: #ffffff;
+	padding: 30px 0;
+}
+
+.btn-join {
+	background: #b2293b;
+	color: #ffffff !important; 
+	margin-top: -1px;
+	transition: background .4s;
+}
+
+.btn-join:hover {
+	background: #801422 !important;
+}
+
+#how-it-works {
+	padding: 40px 0 0;
+	text-align: center;
+}
+
+#how-it-works h2 {
+	margin: 0 0 30px;
+	font-weight: 700;
+}
+
+p {
+	font-size: 16px;
 }
