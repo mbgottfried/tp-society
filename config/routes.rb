@@ -8,6 +8,8 @@ Monospace::Application.routes.draw do
   resources :users
   resources :sessions
 
+  get "plans" => "pages#plans"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
