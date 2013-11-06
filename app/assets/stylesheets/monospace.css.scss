@@ -211,10 +211,7 @@ footer h5 {
 	margin: 0 0 0 2%;
 }
 
-.ccn {
-
-}
-
-.cvv {
-
+.col-md-6, .col-md-4, .col-md-2 {
+    position: relative;
+    z-index: 10;
 }

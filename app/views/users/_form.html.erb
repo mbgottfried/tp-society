@@ -1,5 +1,4 @@
-<div class="panel panel-default">
-  <div class="panel-body">
+
 <fieldset>
       <%= form_for user, :html => {:class => 'form-stacked'} do |f| %>
         <% if user.errors.any? %>
@@ -13,39 +12,48 @@
           </div>
         <% end %>
 
-        <div class="form-group col-md-6">
-          <%= f.label :name %>
-          <div class="input">
-            <%= f.text_field :name, :class => "field", class: "form-control" %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h2>Your Information</h2>
+          </div>
+          <div class="panel-body">
+            
+            <div class="form-group col-md-6">
+              <div class="input">
+                <%= f.text_field :name, :class => "field", class: "form-control", placeholder: "Full Name" %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <div class="input">
+                <%= f.text_field :email, :class => "field", class: "form-control", placeholder: "Email Address" %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <div class="input">
+                <%= f.password_field :password, :class => "field", class: "form-control", placeholder: "Password" %>
+                <% if defined? editing %>
+                  <span class="help-block">Leave blank to keep your current password</span>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <div class="input">
+                <%= f.password_field :password_confirmation, :class => "field", class: "form-control", placeholder: "Confirm Password" %>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="form-group col-md-6">
-          <%= f.label :email %>
-          <div class="input">
-            <%= f.text_field :email, :class => "field", class: "form-control" %>
-          </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2>Billing Information</h2>
         </div>
-
-        <div class="form-group col-md-6">
-          <%= f.label :password %>
-          <div class="input">
-            <%= f.password_field :password, :class => "field", class: "form-control" %>
-            <% if defined? editing %>
-              <span class="help-block">Leave blank to keep your current password</span>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="form-group col-md-6">
-          <%= f.label :password_confirmation %>
-          <div class="input">
-            <%= f.password_field :password_confirmation, :class => "field", class: "form-control" %>
-          </div>
-
+        <div class="panel-body">
           <%= f.hidden_field :stripe_token %>
           <%= f.hidden_field :last_4_digits %>
-        </div>
 
         <% if user.last_4_digits %>
           <div id="change-card" class="clearfix">
@@ -75,28 +83,28 @@
             <span class="glyphicon glyphicon-lock"></span> <%= label_tag :credit_card_number, "Credit Card Number" %>
               <%= text_field_tag :credit_card_number, params[:credit_card_number], :class => "field form-control ccn", :disabled => true %>
           </div>
-          <div class="form-group col-md-3">
-            <%= label_tag :cvv, "Security code (CVV)" %>  
+          <div class="form-group col-md-2">
+            <%= label_tag :cvv, "CVV" %>  
             <%= text_field_tag :cvv, params[:cvv], :class => "field form-control cvv", :disabled => true %>
           </div>
 
-          <div class="form-group col-md-3">
+          <div class="form-group col-md-4">
             <%= label_tag :expiry_date, "Expiration Date" %>
             <div class="input">
-              <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => true}, {:class => "small"} %>
+              <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => true}, {:class => "btn btn-default from-control dropdown-toggle"} %>
             </div>
             <!-- empty -->
           </div>
           </div>
-          <div class="note">
-            Your credit card details will be sent directly to our payment processor
-          </div>
-
+          
 
         <div class="actions">
-          <%= f.submit((defined?(editing) ? "Update" : "Register"), :class => "btn primary") %>
+          <div class="note col-md-12">
+            Your membership will renew each month. Cancel Anytime.
+          <%= f.submit((defined?(editing) ? "Update" : "Register"), :class => "btn btn-success btn-lg btn-block") %>
         </div>
       <% end %>
+      </div>
+    </div>
+    </div>
     </fieldset>
-  </div>
-</div>
