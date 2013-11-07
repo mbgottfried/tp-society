@@ -39,6 +39,9 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    easypost (2.0.10)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -115,6 +118,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   bootstrap-sass!
+  easypost
   rails (~> 3.2.0)
   rails_12factor
   rake (~> 10.0.0)
