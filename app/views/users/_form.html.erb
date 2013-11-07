@@ -73,13 +73,13 @@
 
             <div class="form-group col-md-3">
               <div class="input">
-                <%= f.text_field :state, :class => "field", class: "form-control", placeholder: "State" %>
+                <%= f.text_field :state, :class => "field", class: "form-control", placeholder: "State", maxlength: "2"  %>
               </div>
             </div>
 
             <div class="form-group col-md-3">
               <div class="input">
-                <%= f.text_field :zip, :class => "field", class: "form-control", placeholder: "ZIP" %>
+                <%= f.text_field :zip, :class => "field", class: "form-control", placeholder: "ZIP", maxlength: "5"  %>
               </div>
             </div>
 
@@ -144,7 +144,7 @@
 
         <div class="actions">
           <div class="note col-md-12">
-          <%= f.submit((defined?(editing) ? "Update" : "Register"), :class => "btn btn-success btn-lg btn-block") %>
+          <%= f.submit((defined?(editing) ? "Update" : "Register"), :class => "btn btn-primary btn-lg btn-block") %>
           <br />
           Your membership will renew each month. <%= link_to "Cancel Anytime", "#" %>.
         </div>

@@ -2,12 +2,19 @@
 
 body { font-family: "Open Sans",helvetica, arial, sans-serif;}
 
+::selection {
+	background: #fff2a8; /* Safari */
+	}
+::-moz-selection {
+	background: #fff2a8; /* Firefox */
+}
+
 .center {
 	text-align: center;
 }
 
 .top-down {
-	margin-top: 200px;
+	margin-top: 180px;
 }
 
 div.main {
@@ -179,7 +186,6 @@ footer {
 	min-height: 220px;
 	padding: 20px 0 0;
 	color: #ffffff;
-	margin: 40px 0 0;
 }
 
 footer ul {
@@ -227,4 +233,12 @@ footer h5 {
 
 .fine-print {
 	margin: 15px 0 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.member-buttons li{
+	margin: 0 0 15px;
 }

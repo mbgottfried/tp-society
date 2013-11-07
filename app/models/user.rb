@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  before_save { self.email = email.downcase }
+
   attr_accessible :name, :email, :password, :password_confirmation, :stripe_token, :last_4_digits, :address, :address2, :city, :state, :zip
 
   attr_accessor :password, :stripe_token
@@ -8,15 +10,19 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
 
-  validates_presence_of :name
-  validates_presence_of :email
-  validates_uniqueness_of :email
   validates_presence_of :last_4_digits
   validates_presence_of :address
-  validates_presence_of :address2
   validates_presence_of :city
-  validates_presence_of :state 
-  validates_presence_of :zip
+
+  validates :name, presence: true, length: { maximum: 50 }
+  validates :state, presence: true, length: { maximum: 2 }
+  validates :zip, presence: true, length: { maximum: 5 }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true,
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
+
+  validates :password, length: { minimum: 6 }
 
   def stripe_description
     "#{name}: #{email}"
