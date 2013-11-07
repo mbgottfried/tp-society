@@ -1,5 +1,9 @@
-<div class="page-header">
-  <h1>Edit Profile</h1>
+<div class="container top-down">
+	<div class="page-header">
+  		<h1 class="center">Edit Profile</h1>
+	</div>
+
+		<%= render :partial => 'users/form', :locals => {:user => current_user, :editing => true} %>
 </div>
 
-<%= render :partial => 'users/form', :locals => {:user => current_user, :editing => true} %>
+	<%= render 'layouts/footer' %>

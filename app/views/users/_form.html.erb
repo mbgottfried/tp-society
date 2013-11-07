@@ -85,7 +85,7 @@
 
           </div>
           <div class="panel-footer">
-            <p><small>Toilet Paper Society is currently only accepting members in the United States.</small></p>
+            <p><small>Toilet Paper Society is currently accepting members in the United States only.</small></p>
           </div>
         </div>
 
@@ -138,15 +138,18 @@
             <!-- empty -->
           </div>
           </div>
+        </div>
+      </div>
           
 
         <div class="actions">
           <div class="note col-md-12">
-            Your membership will renew each month. Cancel Anytime.
           <%= f.submit((defined?(editing) ? "Update" : "Register"), :class => "btn btn-success btn-lg btn-block") %>
+          <br />
+          Your membership will renew each month. <%= link_to "Cancel Anytime", "#" %>.
         </div>
+        
       <% end %>
       </div>
-    </div>
-    </div>
+   
     </fieldset>

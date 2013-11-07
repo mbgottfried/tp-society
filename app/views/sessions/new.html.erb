@@ -1,35 +1,34 @@
-<div class="page-header">
-  <h1>Sign In</h1>
-</div>
-
-<div class="row">
-  <div class="span6 columns">
-    <%= form_tag sessions_path, :class => 'form-stacked' do %>
-      <fieldset>
-        <% if flash.alert %>
-          <div class="alert-message block-message error">
-            <p><%= flash.alert %></p>
-          </div>
-        <% end %>
-    
-        <div class="clearfix">
-          <%= label_tag :email %>
-          <div class="input">
-            <%= text_field_tag :email, params[:email], :class => 'field' %>
-          </div>
-        </div>
-
-        <div class="clearfix">
-          <%= label_tag :password %>
-          <div class="input">
-            <%= password_field_tag :password, params[:password], :class => 'field' %>
-          </div>
-        </div>
-
-        <div class="actions">
-          <%= submit_tag "Sign In", :class => "btn primary" %>
-        </div>
-      </fieldset>
-    <% end %>
+<div class="container top-down">
+  <div class="page-header center">
+    <h1>Sign In</h1>
+    <p>Members Only. How's your tush?</p>
   </div>
-</div>
+
+  <div class="col-md-4 col-md-offset-4">
+  <div class="panel panel-default">
+    <div class="panel-body">
+        <%= form_tag sessions_path, :class => 'form-stacked' do %>
+          <fieldset>
+            <% if flash.alert %>
+              <div class="alert-message block-message error">
+                <p><%= flash.alert %></p>
+              </div>
+            <% end %>
+        
+            <div class="input form-group">
+                <%= text_field_tag :email, params[:email], class: 'field form-control', placeholder: "Email Address" %>
+              </div>
+
+            <div class="input form-group">
+                <%= password_field_tag :password, params[:password], class: 'field form-control', placeholder: "Password" %>
+            </div>
+
+            <div class="actions">
+              <%= submit_tag "Sign In", :class => "btn btn-success btn-lg btn-block" %>
+            </div>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+ </div>
