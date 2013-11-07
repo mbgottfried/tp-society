@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
 
-  attr_accessible :name, :email, :password, :password_confirmation, :stripe_token, :last_4_digits, :address, :address2, :city, :state, :zip
+  attr_accessible :name, :email, :password, :password_confirmation, :stripe_token, :last_4_digits, :street1, :street2, :city, :state, :zip
 
   attr_accessor :password, :stripe_token
   before_save :encrypt_password
@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
 
   validates_presence_of :last_4_digits
-  validates_presence_of :address
+  validates_presence_of :street1
   validates_presence_of :city
 
   validates :name, presence: true, length: { maximum: 50 }
