@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation, :stripe_token, :last_4_digits
+  attr_accessible :name, :email, :password, :password_confirmation, :stripe_token, :last_4_digits, :address, :address2, :city, :state, :zip
 
   attr_accessor :password, :stripe_token
   before_save :encrypt_password
@@ -12,6 +12,11 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
   validates_presence_of :last_4_digits
+  validates_presence_of :address
+  validates_presence_of :address2
+  validates_presence_of :city
+  validates_presence_of :state 
+  validates_presence_of :zip
 
   def stripe_description
     "#{name}: #{email}"
