@@ -1,0 +1,12 @@
+<div class="container top-down">
+	<% @users.each do |user| %>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4>Member Number: <%= user.id %> - <%= user.name %>
+			</div>
+			<div class="panel-body">
+				<%= user.email %> | <%= user.street1 %> <%= user.street2 %>, <%= user.city %>, <%= user.state %> <%= user.zip %>
+			</div>
+		</div>
+	<% end %>
+</div>
