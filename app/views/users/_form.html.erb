@@ -33,7 +33,6 @@
               <div class="input">
                 <%= f.password_field :password, :class => "field", class: "form-control", placeholder: "Password" %>
                 <% if defined? editing %>
-                  <span class="help-block">Enter a new password to change your password. Leave blank to keep your current password.</span>
                 <% end %>
               </div>
             </div>
@@ -43,6 +42,9 @@
                 <%= f.password_field :password_confirmation, :class => "field", class: "form-control", placeholder: "Confirm Password" %>
               </div>
             </div>
+          </div>
+          <div class="panel-footer">
+            <small>Enter a new password to change your password. Leave blank to keep your current password.</small>
           </div>
         </div>
 
@@ -84,7 +86,7 @@
 
           </div>
           <div class="panel-footer">
-            <p><small>Toilet Paper Society is currently accepting members in the United States only.</small></p>
+            <small>Toilet Paper Society is currently accepting members in the United States only.</small>
           </div>
         </div>
 

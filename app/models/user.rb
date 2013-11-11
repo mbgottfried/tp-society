@@ -22,10 +22,12 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
 
-  validates :password, length: { minimum: 6 }
-
   def stripe_description
     "#{name}: #{email}"
+  end
+
+  def stripe_address
+    "#{street1}, #{street2}, #{city}, #{state} #{zip}"
   end
 
   def update_stripe
@@ -37,7 +39,8 @@ class User < ActiveRecord::Base
       customer = Stripe::Customer.create(
         :email => email,
         :description => stripe_description,
-        :card => stripe_token
+        :card => stripe_token,
+        :metadata => {'Shipping Address' => stripe_address}
       )
       self.last_4_digits = customer.cards.data.first.last4
       response = customer.update_subscription({:plan => "premium"})

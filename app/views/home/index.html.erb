@@ -7,10 +7,14 @@
 		  <div class="col-md-8">
 		  	<div class="panel panel-default">
 		  		<div class="panel-heading">
-		  			<h2>Current Membership Plan</h2>
+		  			<h2>Member Information</h2>
 		  		</div>
 		  		<div class="panel-body">
-		  			<p>Membership Details</p>
+		  			<p><strong>Membership Number: 0000<%= current_user.id %></strong></p>
+		  			<p><strong>Member Address</strong><br />
+		  				<%= current_user.name %><br />
+		  				<%= current_user.street1 %><%= current_user.street2 %><br />		  				
+						<%= current_user.city %>, <%= current_user.state %> <%= current_user.zip %></p>
 		  		</div>
 		  	</div>
 		  </div>
