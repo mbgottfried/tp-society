@@ -6,4 +6,7 @@ class PagesController < ApplicationController
   def goodbye
   end
 
+  def cancel
+  end
+
 end

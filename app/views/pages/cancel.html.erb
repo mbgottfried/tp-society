@@ -1,0 +1,15 @@
+<div class="container top-down">
+<% if current_user %>
+	<div class="page-header center">
+		<h1>Are you sure?</h1>
+		<p>We'd hate to see you go :(</p>
+	</div>
+	<div class="col-md-6 col-md-offset-3">
+		<%= link_to "I'll stay! Toilet Paper Delivery is awesome!", root_path, class: "btn btn-primary btn-lg btn-block" %>
+		<%= link_to "I like to run out of TP. Cancel my Subscription.", cancel_account_path, class: "btn btn-danger btn-lg btn-block" %>
+	</div>
+<% else %>
+	<%= render 'layouts/members-only' %>
+<% end %>
+</div>
+<%= render 'layouts/footer' %>
