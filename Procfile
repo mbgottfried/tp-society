@@ -1,1 +1,2 @@
-web: bundle exec thin start -p $PORT -e $RACK_ENV
+web: script/rails server -p $PORT
+console: script/rails console
