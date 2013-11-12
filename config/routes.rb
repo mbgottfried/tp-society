@@ -4,6 +4,7 @@ Monospace::Application.routes.draw do
   match "sign_in" => "sessions#new", :as => :sign_in
   match "sign_out" => "sessions#destroy", :as => :sign_out
   match "edit_profile" => "users#edit", :as => :edit_profile
+  match "cancel_account" => "users#destroy", :as => :cancel_account
 
   resources :users
   resources :sessions

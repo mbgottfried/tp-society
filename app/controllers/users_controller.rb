@@ -30,6 +30,12 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def destroy
+    customer = Stripe::Customer.retrieve(current_user.stripe_id)
+    customer.cancel_subscription
+    redirect_to root_path, :notice => "Your Membership has been cancelled."
+  end
+
   def update
     current_user.update_attributes(params[:user])
     if current_user.save
@@ -37,13 +43,12 @@ class UsersController < ApplicationController
     else
       render :action => :edit
     end
-  rescue Stripe::StripeError => e
-    logger.error e.message
-    @user.errors.add :base, "There was a problem with your credit card"
-    @user.stripe_token = nil
-    render :action => :edit
+    rescue Stripe::StripeError => e
+      logger.error e.message
+      @user.errors.add :base, "There was a problem with your credit card"
+      @user.stripe_token = nil
+      render :action => :edit
+    end
   end
-end
 
-def destroy
-end
+  
