@@ -11,6 +11,7 @@ Monospace::Application.routes.draw do
 
   get "plans" => "pages#plans"
   get "orders" => "admin#orders"
+  get "goodbye" => "pages#goodbye"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

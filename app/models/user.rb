@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
 
-  attr_accessible :name, :email, :password, :password_confirmation, :stripe_token, :last_4_digits, :street1, :street2, :city, :state, :zip
+  attr_accessible :name, :email, :password, :password_confirmation, :stripe_token, :last_4_digits, :street1, :street2, :city, :state, :zip, :subscribed
 
   attr_accessor :password, :stripe_token
   before_save :encrypt_password
@@ -44,6 +44,7 @@ class User < ActiveRecord::Base
       )
       self.last_4_digits = customer.cards.data.first.last4
       response = customer.update_subscription({:plan => "premium"})
+      self.subscribed = true
     else
       customer = Stripe::Customer.retrieve(stripe_id)
 

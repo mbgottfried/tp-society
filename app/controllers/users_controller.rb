@@ -33,7 +33,10 @@ class UsersController < ApplicationController
   def destroy
     customer = Stripe::Customer.retrieve(current_user.stripe_id)
     customer.cancel_subscription
-    redirect_to root_path, :notice => "Your Membership has been cancelled."
+    
+    @user = current_user
+    @user.update_attributes(subscribed: false)
+    redirect_to goodbye_path
   end
 
   def update
@@ -50,5 +53,3 @@ class UsersController < ApplicationController
       render :action => :edit
     end
   end
-
-  
