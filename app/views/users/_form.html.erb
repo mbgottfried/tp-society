@@ -128,13 +128,13 @@
           </div>
           <div class="form-group col-md-2">
             <%= label_tag :cvv, "CVV" %>  
-            <%= text_field_tag :cvv, params[:cvv], :class => "field form-control cvv", :disabled => true %>
+            <%= text_field_tag :cvv, params[:cvv], :class => "field form-control cvv" %>
           </div>
 
           <div class="form-group col-md-4">
             <%= label_tag :expiry_date, "Expiration Date" %>
             <div class="input">
-              <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => true}, {:class => "btn btn-default from-control dropdown-toggle"} %>
+              <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25}, {:class => "btn btn-default from-control dropdown-toggle"} %>
             </div>
             <!-- empty -->
           </div>
