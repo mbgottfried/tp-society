@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131107200204) do
+ActiveRecord::Schema.define(:version => 20131113145515) do
 
   create_table "orders", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20131107200204) do
     t.string   "hashed_password"
     t.string   "last_4_digits"
     t.string   "stripe_id"
-    t.boolean  "subscribed",      :default => false
+    t.boolean  "subscribed",             :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "street1"
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(:version => 20131107200204) do
     t.string   "country"
     t.string   "zip"
     t.string   "status"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
