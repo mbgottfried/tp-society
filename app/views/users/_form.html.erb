@@ -124,17 +124,17 @@
           <!-- these fields are disabled before submission and are never transmitted back to rails -->
           <div class="form-group col-md-6">
             <span class="glyphicon glyphicon-lock"></span> <%= label_tag :credit_card_number, "Credit Card Number" %>
-              <%= text_field_tag :credit_card_number, params[:credit_card_number], :class => "field form-control ccn" %>
+              <%= text_field_tag :credit_card_number, params[:credit_card_number], :class => "field form-control ccn", :disabled => true %>
           </div>
           <div class="form-group col-md-2">
             <%= label_tag :cvv, "CVV" %>  
-            <%= text_field_tag :cvv, params[:cvv], :class => "field form-control cvv" %>
+            <%= text_field_tag :cvv, params[:cvv], :class => "field form-control cvv", :disabled => true %>
           </div>
 
           <div class="form-group col-md-4">
             <%= label_tag :expiry_date, "Expiration Date" %>
             <div class="input">
-              <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25}, {:class => "btn btn-default from-control dropdown-toggle"} %>
+              <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => true}, {:class => "btn btn-default from-control dropdown-toggle"} %>
             </div>
             <!-- empty -->
           </div>
