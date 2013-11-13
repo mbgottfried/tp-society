@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131113145515) do
+ActiveRecord::Schema.define(:version => 20131113185423) do
 
   create_table "orders", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20131113145515) do
     t.string   "country"
     t.string   "zip"
     t.string   "status"
-    t.string   "auth_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
   end
