@@ -65,6 +65,8 @@ Monospace::Application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
+  config.action_mailer.default_url_options = { :host => 'tp-society.heroku.com' }
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :address              => "smtp.mandrillapp.com",
