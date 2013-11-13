@@ -39,6 +39,12 @@ class UsersController < ApplicationController
     redirect_to goodbye_path
   end
 
+  def bury
+    @user = current_user
+    @user.destroy
+    redirect_to root_path
+  end
+
   def update
     current_user.update_attributes(params[:user])
     if current_user.save

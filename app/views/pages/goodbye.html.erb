@@ -1,15 +1,18 @@
 <div class="container top-down">
+	<% if current_user %>
 	<div class="page-header center">
 		<h1>Sorry To See You Go</h1>
 	</div>
 	<div class="col-md-8">
 		<p>We're sorry to see you go :(</p>
-		<p>Your membership has been cancelled and your account has been cancelled.</p>
-		<p>If you'd like to get back in the Society, head on over to the <%= link_to "Member Registration", new_user_path %> and sign back up.</p>
-		<p>It's that easy.</p>
+		<p>Your membership has been cancelled but your account is still active.</p>
 	</div>
-		Want Back in?
 	<div class="col-md-4">
+		<%= link_to "Re-Active Membership", "#", class: "btn btn-primary btn-lg btn-block" %>
+		<%= link_to "Delete Account", bury_account_path, class: "btn btn-danger btn-lg btn-block" %>
 	</div>
+	<% else %>
+		<%= render 'layouts/members-only' %>
+	<% end %>
 </div>
 <%= render 'layouts/footer' %>
