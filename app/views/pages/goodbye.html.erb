@@ -3,12 +3,12 @@
 	<div class="page-header center">
 		<h1>Sorry To See You Go</h1>
 	</div>
-	<div class="col-md-8">
+	<div class="col-md-8 center">
 		<p>We're sorry to see you go :(</p>
 		<p>Your membership has been cancelled but your account is still active.</p>
 	</div>
 	<div class="col-md-4">
-		<%= link_to "Re-Active Membership", reactivate_account_path, class: "btn btn-primary btn-lg btn-block" %>
+		<%= link_to "Re-Active Membership", reactivate_path, class: "btn btn-primary btn-lg btn-block" %>
 		<%= link_to "Delete Account", bury_account_path, class: "btn btn-danger btn-lg btn-block" %>
 	</div>
 	<% else %>

@@ -34,7 +34,6 @@ class UsersController < ApplicationController
   def destroy
     customer = Stripe::Customer.retrieve(current_user.stripe_id)
     customer.cancel_subscription
-    
     @user = current_user
     @user.update_attributes(subscribed: false)
     redirect_to goodbye_path

@@ -55,6 +55,7 @@ class User < ActiveRecord::Base
       # in case they've changed
       customer.email = email
       customer.description = stripe_description
+      customer.metadata = {'Shipping Address' => stripe_address}
 
       customer.save
 
