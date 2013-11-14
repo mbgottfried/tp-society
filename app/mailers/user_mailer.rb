@@ -12,4 +12,9 @@ class UserMailer < ActionMailer::Base
     mail :to => user.email, :subject => "Toilet Paper Society Password Reset"
   end
 
+  def welcome_email(user)
+    @user = user
+    mail :to => user.email, :subject => "Welcome to the Society!"
+  end
+
 end
