@@ -6,6 +6,7 @@ Monospace::Application.routes.draw do
   match "edit_profile" => "users#edit", :as => :edit_profile
   match "cancel_account" => "users#destroy", :as => :cancel_account
   match "delete_account" => "users#bury", :as => :bury_account
+  match "reactivate_account" => "users#reactivate_account", :as => "reactivate_account"
 
   resources :users
   resources :sessions
@@ -15,6 +16,7 @@ Monospace::Application.routes.draw do
   get "orders" => "admin#orders"
   get "goodbye" => "pages#goodbye"
   get "cancel" => "pages#cancel"
+  get "reactivate" => "users#reactivate"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

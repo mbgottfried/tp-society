@@ -30,7 +30,7 @@
 		  	<% if current_user.subscribed == true %>
 		  		<li><%= link_to "Manage Profile", edit_profile_path, class: "btn btn-danger btn-block btn-lg" %></li>
 		  	<% else %>
-		  		<li><%= link_to "Re-activate Your Membership", "#", class: "btn btn-danger btn-block btn-lg" %></li>
+		  		<li><%= link_to "Re-activate Your Membership", reactivate_path, class: "btn btn-danger btn-block btn-lg" %></li>
 		  	<% end %>
 		  	<li><%= link_to "Invite Friends on Facebook", "#", class: "btn btn-primary btn-block btn-lg" %></li>
 		  	<li><%= link_to "Invite your Twitter Followers", "#", class: "btn btn-primary btn-block btn-lg" %></li>
