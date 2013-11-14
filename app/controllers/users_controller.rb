@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path, :notice => "Signed up!"
-      UserMailer.welcome_email(@user).deliver
+      UserMailer.welcome_mailer(@user).deliver
     else
       render :action => :new
     end
