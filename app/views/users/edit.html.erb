@@ -4,6 +4,14 @@
 	</div>
 		<div class="col-md-8 col-md-offset-2">
 			<%= render :partial => 'users/form', :locals => {:user => current_user, :editing => true} %>
+			<div class="signup-notes">
+				Your membership will renew each month. 
+          		<% if current_user.subscribed == true %>
+            		<%= link_to "Cancel Anytime", cancel_path %>.
+          		<% else %>
+            		<%= link_to "Re-activate your membership", "#" %>.
+          		<% end %>
+          	</div>
 		</div>
 </div>
 
