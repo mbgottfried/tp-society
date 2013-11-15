@@ -6,6 +6,6 @@
   		post '/admin' do
 		# Retrieve the request's body and parse it as JSON
   		event_json = JSON.parse(request.body.read)
-
+  	end
     end
   end
