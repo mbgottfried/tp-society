@@ -18,6 +18,8 @@ Monospace::Application.routes.draw do
   get "cancel" => "pages#cancel"
   get "reactivate" => "users#reactivate"
 
+  mount StripeEvent::Engine => '/admin' # provide a custom path
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

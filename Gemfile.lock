@@ -36,7 +36,7 @@ GEM
     activesupport (3.2.15)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
-    arel (3.0.2)
+    arel (3.0.3)
     bcrypt-ruby (3.1.2)
     builder (3.0.4)
     daemons (1.1.9)
@@ -106,6 +106,9 @@ GEM
     stripe (1.8.8)
       multi_json (>= 1.0.4, < 2)
       rest-client (~> 1.4)
+    stripe_event (0.6.1)
+      rails (>= 3.1)
+      stripe (~> 1.6)
     thin (1.6.1)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -135,5 +138,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.0)
   sqlite3
   stripe (~> 1.8.4)
+  stripe_event
   thin
   uglifier (>= 1.0.3)

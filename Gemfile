@@ -9,6 +9,7 @@ gem 'stripe', '~> 1.8.4'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'easypost'
 gem 'jquery-rails'
+gem 'stripe_event'
 
 group :assets do
   gem 'sass-rails',   "~> 3.2.0"
