@@ -3,9 +3,8 @@
 
   StripeEvent.setup do
   	subscribe 'customer.updated' do |event|
-  		post '/admin' do
-		# Retrieve the request's body and parse it as JSON
-  		event_json = JSON.parse(request.body.read)
-  	end
+  		user = User.find(User.find_by_stripe_customer_token(data['data']['object']['customer']).profile)
+  		user.update_attributes(most_recent_charge: Date.today.to_s)
+  		user.save
     end
   end
