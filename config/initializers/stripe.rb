@@ -2,18 +2,9 @@
   Stripe.api_key = 'sk_test_cgajMxpMgtzyEy4fdPKC9zzd'
 
   StripeEvent.setup do
-  subscribe 'charge.failed' do |event|
-    # Define subscriber behavior based on the event object
-    event.class #=> Stripe::Event
-    event.type  #=> "charge.failed"
-    event.data  #=> { ... }
-  end
-
-  subscribe 'customer.created', 'customer.updated' do |event|
-    # Handle multiple event types
-  end
-
-  subscribe do |event|
-    # Handle all event types - logging, etc.
-  end
+  	subscribe 'charge.succeeded' do |event|
+  		@user = User.find_by_customer_id(event.data.object.customer)
+  		@user.most_recent_charge = Date.today.to_s
+  		@user.save
+    end
   end

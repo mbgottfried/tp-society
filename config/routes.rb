@@ -17,6 +17,7 @@ Monospace::Application.routes.draw do
   get "goodbye" => "pages#goodbye"
   get "cancel" => "pages#cancel"
   get "reactivate" => "users#reactivate"
+  get "admin" => "admin#admin"
 
   mount StripeEvent::Engine => '/admin' # provide a custom path
 

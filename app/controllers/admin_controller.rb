@@ -4,4 +4,7 @@ class AdminController < ApplicationController
   	@users = User.all
   end
 
+  def admin
+  end
+
 end
