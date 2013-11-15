@@ -2,7 +2,7 @@
   Stripe.api_key = 'sk_test_cgajMxpMgtzyEy4fdPKC9zzd'
 
   StripeEvent.setup do
-  	subscribe 'charge.succeeded' do |event|
+  	subscribe 'account.updated' do |event|
   		user = User.find_by_customer_id(event.data.object.customer)
   		user.update_attributes(most_recent_charge: Date.today.to_s)
   		user.save
