@@ -3,7 +3,7 @@
 
   StripeEvent.setup do
   	subscribe 'customer.updated' do |event|
-  		user = User.find(User.find_by_stripe_customer_token(data['data']['object']['customer']).profile)
+  		user = User.find_by_stripe_customer_token(data['data']['object']['customer'])
   		user.update_attributes(most_recent_charge: Date.today.to_s)
   		user.save
     end
