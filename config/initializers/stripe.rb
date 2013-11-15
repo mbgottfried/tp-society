@@ -3,8 +3,8 @@
 
   StripeEvent.setup do
   	subscribe 'charge.succeeded' do |event|
-  		@user = User.find_by_customer_id(event.data.object.customer)
-  		@user.update_attributes(most_recent_charge: Date.today.to_s)
-  		@user.save
+  		user = User.find_by_customer_id(event.data.object.customer)
+  		user.update_attributes(most_recent_charge: Date.today.to_s)
+  		user.save
     end
   end
