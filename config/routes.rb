@@ -19,7 +19,7 @@ Monospace::Application.routes.draw do
   get "reactivate" => "users#reactivate"
   get "admin" => "admin#admin"
 
-  post 'webhook/receive'
+  mount StripeEvent::Engine => '/webhooks' # provide a custom path
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
