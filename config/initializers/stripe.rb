@@ -3,10 +3,8 @@
 
   StripeEvent.setup do
     subscribe 'charge.succeeded' do |event|
-      event.class => Stripe::Event
-      event.type  => "charge.succeeded"
-      event.data  => { "It worked" }
+    	@user = current_user
+    	@user.update_attributes(most_recent_charge: Time.now)
     end
 
   end
-end
