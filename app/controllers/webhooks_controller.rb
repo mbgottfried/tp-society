@@ -3,5 +3,4 @@ class EventsController < ApplicationController
       def stripe_events  
         # params['type'] will give u type of stripe event  
       end  
-    end  	
-end
+end  	
