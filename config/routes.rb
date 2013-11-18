@@ -1,4 +1,5 @@
 Monospace::Application.routes.draw do
+  mount StripeEvent::Engine => '/webhooks' # provide a custom path 
   root :to => "home#index"
   match 'register' => 'users#new', :as => :register
   match "sign_in" => "sessions#new", :as => :sign_in
@@ -19,7 +20,7 @@ Monospace::Application.routes.draw do
   get "reactivate" => "users#reactivate"
   get "admin" => "admin#admin"
 
-  mount StripeEvent::Engine => '/webhooks' # provide a custom path 
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
