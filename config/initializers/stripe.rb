@@ -5,7 +5,8 @@
     subscribe 'charge.succeeded' do |event|
       event.class => Stripe::Event
       event.type  => "charge.succeeded"
-      event.data  => { "It worked!" }
+      event.data  => { "It worked" }
     end
 
   end
+end
