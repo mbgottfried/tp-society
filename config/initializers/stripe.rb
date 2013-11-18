@@ -5,6 +5,7 @@
     subscribe 'charge.succeeded' do |event|
     	@user = current_user
     	@user.update_attributes(most_recent_charge: Time.now)
+    	@user.save
     end
 
   end
