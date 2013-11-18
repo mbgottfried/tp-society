@@ -5,7 +5,6 @@
     subscribe 'customer.updated' do |event|
     	user = User.find_by_stripe_id(event.data.object.id)
     	user.most_recent_charge = DateTime.new
-    	user.save!
     end
 
   end
