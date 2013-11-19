@@ -1,5 +1,5 @@
 Monospace::Application.routes.draw do
-  mount StripeEvent::Engine => '/webhooks' # provide a custom path 
+  mount StripeEvent::Engine => '/webhooks'
   root :to => "home#index"
   match 'register' => 'users#new', :as => :register
   match "sign_in" => "sessions#new", :as => :sign_in
