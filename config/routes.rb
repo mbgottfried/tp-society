@@ -12,7 +12,9 @@ Monospace::Application.routes.draw do
   resources :users
   resources :sessions
   resources :password_resets
-  resources :webhooks
+  resources :webhooks do
+    resource :charge_succeeded
+  end
 
   get "plans" => "pages#plans"
   get "orders" => "admin#orders"
