@@ -1,6 +1,7 @@
 class WebhooksController < ApplicationController
 
 	def self.charge_succeeded
+	@user = user
 	to_address = EasyPost::Address.create(
 			:name => user.name,
 			:street1 => user.street1,
