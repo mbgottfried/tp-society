@@ -1,7 +1,6 @@
-class WebhooksController < ApplicationController  
-	
-	require 'easypost'
-	EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
+class WebhooksController < ApplicationController
+require 'easypost'
+EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
 
 	def charge_succeeded
 		Easypost::Address.create(
