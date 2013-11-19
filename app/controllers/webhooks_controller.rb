@@ -33,5 +33,10 @@ class WebhooksController < ApplicationController
 			:from_address => from_address,
 			:parcel => parcel
 		)
+	shipment.buy(
+  			:rate => shipment.lowest_rate
+		)		
+
+		puts shipment.postage_label.label_url
 	end	
 end  	
