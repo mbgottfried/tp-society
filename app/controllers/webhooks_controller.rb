@@ -1,9 +1,7 @@
 class WebhooksController < ApplicationController
-require 'easypost'
-EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
 
 	def self.charge_succeeded
-		to_address = Easypost::Address.create(
+	to_address = Easypost::Address.create(
 			:name => user.name,
 			:street1 => user.street1,
 			:street2 => user.street2,
