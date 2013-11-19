@@ -30,14 +30,7 @@ class User < ActiveRecord::Base
     "#{street1}, #{street2}, #{city}, #{state} #{zip}"
   end
 
-  def chargeup
-    user = User.find_by_stripe_id(event.data.object.customer)
-    user.most_recent_charge = Time.zone.now
-    save!
-  end
-
   def custup
-    user = User.find_by_stripe_id(event.data.object.customer)
     user.country = "United States"
     save!
   end
