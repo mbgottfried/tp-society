@@ -1,7 +1,7 @@
 class WebhooksController < ApplicationController
 
 	def self.charge_succeeded
-	to_address = Easypost::Address.create(
+	to_address = EasyPost::Address.create(
 			:name => user.name,
 			:street1 => user.street1,
 			:street2 => user.street2,
@@ -28,7 +28,7 @@ class WebhooksController < ApplicationController
 			:weight => 35.1
 		)
 
-	shipment = Easypost::Shipment.create(
+	shipment = EasyPost::Shipment.create(
 			:to_address => to_address,
 			:from_address => from_address,
 			:parcel => parcel
