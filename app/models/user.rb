@@ -31,8 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def twizzle
-    user.most_recent_charge = Time.zone.now
-    save!
+    
   end
 
   def update_stripe
