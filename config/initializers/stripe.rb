@@ -3,7 +3,7 @@
 
   StripeEvent.setup do
     subscribe 'customer.updated' do |event|
-    	user = User.find_by_stripe_id(event.data.object.customer)
+    	user = User.find_by_stripe_id("cus_2wldOugaiiuBlj")
     	user.custup
     end
   end
