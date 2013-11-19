@@ -11,9 +11,8 @@ class WebhooksController < ApplicationController
 			:city => user.city,
 			:state => user.state,
 			:zip => user.zip,
-			:country = 'USA',
+			:country => 'USA',
 			:email => user.email	
 		)
-		end
 	end	
 end  	
