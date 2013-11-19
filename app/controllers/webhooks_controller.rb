@@ -3,14 +3,14 @@ class WebhooksController < ApplicationController
 	def self.charge_succeeded
 	@user = user
 	to_address = EasyPost::Address.create(
-			:name => user.name,
-			:street1 => user.street1,
-			:street2 => user.street2,
-			:city => user.city,
-			:state => user.state,
-			:zip => user.zip,
+			:name => @user.name,
+			:street1 => @user.street1,
+			:street2 => @user.street2,
+			:city => @user.city,
+			:state => @user.state,
+			:zip => @user.zip,
 			:country => 'USA',
-			:email => user.email	
+			:email => @user.email	
 		)
 	from_address = EasyPost::Address.create(
 			:company => 'Eastmont Group',
