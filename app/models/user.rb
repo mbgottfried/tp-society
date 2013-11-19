@@ -34,6 +34,10 @@ class User < ActiveRecord::Base
     UserMailer.customer_updated(self).deliver
   end
 
+  def charge_success
+    WebhooksController.charge_succeeded
+  end
+
   def update_stripe
     if stripe_id.nil?
       if !stripe_token.present?

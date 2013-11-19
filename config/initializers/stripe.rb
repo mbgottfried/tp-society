@@ -14,6 +14,6 @@ EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
   StripeEvent.setup do
     subscribe 'charge.succeeded' do |event|
     	user = User.find_by_stripe_id(event.data.object.customer)
-    	WebhooksController.charge_succeeded
+    	user.charge_success
     end
   end
