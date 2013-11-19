@@ -30,6 +30,11 @@ class User < ActiveRecord::Base
     "#{street1}, #{street2}, #{city}, #{state} #{zip}"
   end
 
+  def twizzle
+    user.most_recent_charge = Time.zone.now
+    save!
+  end
+
   def update_stripe
     if stripe_id.nil?
       if !stripe_token.present?
