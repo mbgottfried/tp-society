@@ -19,7 +19,7 @@ class UserMailer < ActionMailer::Base
 
   def customer_updated(user)
     @user = user
-    mail :to => user.email :subject => "Account Updated"
+    mail :to => user.email, :subject => "Account Updated"
   end
 
 end
