@@ -19,7 +19,7 @@ EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
 			:street 2 => 'Suite 7',
 			:city => 'Atlanta',
 			:state => 'GA',
-			:zip => '30318'
+			:zip => '30318',
 			:phone => '404-937-6554'
 		)
 
