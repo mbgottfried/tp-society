@@ -8,13 +8,11 @@ Monospace::Application.routes.draw do
   match "cancel_account" => "users#destroy", :as => :cancel_account
   match "delete_account" => "users#bury", :as => :bury_account
   match "reactivate_account" => "users#reactivate_account", :as => "reactivate_account"
+  match "charge_succeeded" => "webhooks#charge_succeeded", :as => "charge_succeeded"
 
   resources :users
   resources :sessions
   resources :password_resets
-  resources :webhooks do
-    resource :charge_succeeded
-  end
 
   get "plans" => "pages#plans"
   get "orders" => "admin#orders"
