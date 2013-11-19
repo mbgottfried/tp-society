@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
     save!
   end
 
-  def chargeup
+  def custup
     user = User.find_by_stripe_id(event.data.object.customer)
     user.country = "United States"
     save!
