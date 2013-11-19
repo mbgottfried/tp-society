@@ -3,6 +3,12 @@
 
   StripeEvent.setup do
     subscribe 'charge.succeeded' do |event|
-       	user.chargeup
+    	user.chargeup
+    end
+  end
+
+  StripeEvent.setup do
+    subscribe 'customer.updated' do |event|
+    	user.custup
     end
   end

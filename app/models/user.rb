@@ -36,6 +36,12 @@ class User < ActiveRecord::Base
     save!
   end
 
+  def chargeup
+    user = User.find_by_stripe_id(event.data.object.customer)
+    user.country = "United States"
+    save!
+  end
+
   def update_stripe
     if stripe_id.nil?
       if !stripe_token.present?
