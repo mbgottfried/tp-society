@@ -17,4 +17,9 @@ class UserMailer < ActionMailer::Base
     mail :to => user.email, :subject => "Welcome to the Society!"
   end
 
+  def customer_updated(user)
+    @user = user
+    mail :to => user.email :subject => "Account Updated"
+  end
+
 end

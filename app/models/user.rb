@@ -31,8 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def custup
-    @user.country == "United States"
-    save!
+    UserMailer.customer_updated(self).deliver
   end
 
   def update_stripe
