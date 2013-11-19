@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def custup
-    @user.update_attributes(country: "United States")
+    @user.country == "United States"
     save!
   end
 
