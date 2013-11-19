@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   end
 
   def charge_success
-    WebhooksController.charge_succeeded
+    WebhooksController.charge_succeeded(self)
   end
 
   def update_stripe
