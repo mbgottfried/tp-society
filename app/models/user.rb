@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
   before_save :update_stripe
 
+  has_many :orders
+
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
 

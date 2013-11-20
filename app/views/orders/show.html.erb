@@ -1,0 +1,12 @@
+<div class="container top-down"
+<p id="notice"><%= notice %></p>
+<h1>Order Number: <%= @order.id %></h1>
+<p>
+  <b>Status:</b>
+  <%= @order.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
+</div>

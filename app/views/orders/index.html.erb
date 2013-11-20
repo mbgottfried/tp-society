@@ -1,0 +1,30 @@
+<div class="container top-down">
+<h1>All Orders</h1>
+
+<% @orders.each do |order| %>
+  
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-md-4">
+          <strong><%= order.user.name %></strong><br />
+          <%= order.user.email %><br />
+          <%= order.user.stripe_id %>
+        </div>
+        <div class="col-md-4">
+          <%= order.user.street1 %><br />
+          <%= order.user.street2 %><br />
+          <%= order.user.city %>, <%= order.user.state %> <%= order.user.zip %>
+        </div>
+        <div class="col-md-4 center">
+          <% if order.status == "Order Placed" %>
+            <span style="background: #ff0000; padding: 3px 5px;"><%= order.status %><span>
+          <% else %>
+            <%= order.status %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
+<% end %>
+
+</div>
