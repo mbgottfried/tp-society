@@ -3,7 +3,11 @@
 			<div class="col-md-4">
 				<h5>Don't get caught with your pants down.</h5>
 			<ul>
+					<% if current_user %>
+					<li><%= link_to "Account Settings", edit_profile_path %></li>
+					<% else %>
 					<li><%= link_to "Join Now", register_path %></li>
+					<% end %>
 					<li><%= link_to "How It Works", "#" %></li>
 					<li><%= link_to "Privacy Policy", "#" %></li>
 					<li><%= link_to "Terms of Service", "#" %></li>
