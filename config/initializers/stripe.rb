@@ -53,3 +53,17 @@ EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
           puts shipment.postage_label.label_url
     end
   end
+
+  StripeEvent.setup do
+    subscribe 'charge.failed' do |event|
+      user = User.find_by_stripe_id(event.data.object.customer)
+      UserMailer.charge_failed(self).deliver
+    end
+  end
+
+  StripeEvent.setup do
+    subscribe 'customer.subscription.deleted' do |event|
+      user = User.find_by_stripe_id(event.data.object.customer)
+      UserMailer.subscription_deleted(self).deliver
+    end
+  end

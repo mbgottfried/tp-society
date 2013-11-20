@@ -22,4 +22,14 @@ class UserMailer < ActionMailer::Base
     mail :to => user.email, :subject => "Account Updated"
   end
 
+  def charge_failed(user)
+    @user = user
+    mail :to => user.email, :subject => "Please Update Your Billing Information"
+  end
+
+  def subscription_deleted(user)
+    @user = user
+    mail :to => user.email, :subject => "Sorry to see you go :("
+  end
+
 end
