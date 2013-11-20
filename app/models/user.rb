@@ -34,6 +34,14 @@ class User < ActiveRecord::Base
     UserMailer.customer_updated(self).deliver
   end
 
+  def subdel
+    UserMailer.subscription_deleted(self).deliver
+  end
+
+  def chargefail
+    UserMailer.charge_failed(self).deliver
+  end
+
   def update_stripe
     if stripe_id.nil?
       if !stripe_token.present?
