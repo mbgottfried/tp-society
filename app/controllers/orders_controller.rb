@@ -41,6 +41,12 @@ class OrdersController < ApplicationController
     redirect_to orders_url
   end
 
+  def ship_order
+    @order.status = "Order Shipped"
+    @order.save
+    redirect_to orders_url
+  end
+
   private
     def set_order
       @order = Order.find(params[:id])

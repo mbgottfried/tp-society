@@ -5,20 +5,27 @@
   
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="col-md-3">
+        <div class="col-md-1">
+          <%= order.id %>
+        </div>
+        <div class="col-md-4">
           <strong><%= order.user.name %></strong><br />
           <%= order.user.email %><br />
           <%= order.user.stripe_id %>
         </div>
         <div class="col-md-3">
+          <strong>Shipping Address </strong><br />
           <%= order.user.street1 %><br />
-          <%= order.user.street2 %><br />
+          <% if order.user.street2 == "" %>
+          <% else %>
+            <%= order.user.street2 %><br />
+          <% end %>
           <%= order.user.city %>, <%= order.user.state %> <%= order.user.zip %>
         </div>
-        <div class="col-md-3 center">
-          <br /><%= link_to "Print Shipping Label", "#", class: "btn btn-warning" %>
+        <div class="col-md-2 center">
+          <br /><%= link_to "Print Shipping Label", order.label, class: "btn btn-warning" %>
         </div>
-        <div class="col-md-3 center">
+        <div class="col-md-2 right">
           <% if order.status == "Order Placed" %>
             <span style="background: #ff0000; padding: 3px 5px;"><%= order.status %></span><br /><br />
             <%= link_to "Ship Order", "#", class: "btn btn-success" %>
