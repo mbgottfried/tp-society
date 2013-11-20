@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def custup
-    UserMailer.customer_updated(@user).deliver
+    UserMailer.customer_updated(self).deliver
   end
 
   def subdel
