@@ -52,7 +52,8 @@ EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
 
           puts shipment.postage_label.label_url
 
-          order.new_shipment(user, shipment)
+          @order = order.new
+          @order.new_shipment(user, shipment)
     end
   end
 
