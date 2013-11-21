@@ -1,7 +1,6 @@
 Monospace::Application.routes.draw do
   resources :orders
 
-
   mount StripeEvent::Engine => '/webhooks'
   root :to => "home#index"
   match 'register' => 'users#new', :as => :register
