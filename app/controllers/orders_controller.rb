@@ -55,6 +55,15 @@ class OrdersController < ApplicationController
     redirect_to orders_url
   end
 
+  def new_shipment
+    @order = Order.new(params[:order])
+    @order.status = "Order Placed"
+    @order.user_id = user.id
+    @order.label = shipment.postage_label.label_url
+    @order.shipment_id = shipment.id
+    @order.save
+  end
+
   private
     def set_order
       @order = Order.find(params[:id])
@@ -62,7 +71,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:status, :id)
+      params.require(:order).permit(:status, :id, :label, :shipment_id)
     end
   
 end

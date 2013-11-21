@@ -13,6 +13,7 @@ Monospace::Application.routes.draw do
   match "charge_succeeded" => "webhooks#charge_succeeded", :as => "charge_succeeded"
   match "ship_order/:id/" => "orders#ship_order", :as => :ship_order
   match "unship_order/:id/" => "orders#unship_order", :as => :unship_order
+  match "new_shipment" => "orders#new_shipment", :as => :new_shipment
 
   resources :users
   resources :sessions

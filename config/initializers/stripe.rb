@@ -52,11 +52,7 @@ EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
 
           puts shipment.postage_label.label_url
 
-          @order = order.new
-          @order.status = "Order Placed"
-          @order.user_id = user.id
-          @order.label = shipment.postage_label.label_url
-          @order.save
+          order.new_shipment(user, shipment)
     end
   end
 
