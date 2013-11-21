@@ -43,11 +43,11 @@ class Order < ActiveRecord::Base
           puts shipment.postage_label.label_url
           puts shipment.id
 
-          order = order.new
-          order.status = "Order Placed"
-          order.user_id = user.id
-          order.label = shipment.postage_label.label_url
-          order.shipment_id = shipment.id
-          order.save
+          @order = order.new
+          @order.status = "Order Placed"
+          @order.user_id = user.id
+          @order.label = shipment.postage_label.label_url
+          @order.shipment_id = shipment.id
+          @order.save
   end
 end
