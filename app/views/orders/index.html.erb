@@ -15,18 +15,18 @@
             <% end %>
           </div>
           <div class="col-md-3">
-            <strong><%= order.user.name %></strong><br />
-            <%= order.user.email %><br />
-            <%= order.user.stripe_id %>
+            <strong><%= order.user.name if order.user %></strong><br />
+            <%= order.user.email if order.user %><br />
+            <%= order.user.stripe_id if order.user %>
           </div>
           <div class="col-md-3">
             <strong>Shipping Address </strong><br />
-            <%= order.user.street1 %><br />
+            <%= order.user.street1 if order.user %><br />
             <% if order.user.street2 = "" %>
             <% else %>
-              <%= order.user.street2 %><br />
+              <%= order.user.street2  if order.user %><br />
             <% end %>
-            <%= order.user.city %>, <%= order.user.state %> <%= order.user.zip %>
+            <%= order.user.city if order.user %>, <%= order.user.state if order.user %> <%= order.user.zip if order.user %>
           </div>
           <div class="col-md-2">
             <strong>Order Placed On:</strong><br />
