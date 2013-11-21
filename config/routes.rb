@@ -12,7 +12,8 @@ Monospace::Application.routes.draw do
   match "delete_account" => "users#bury", :as => :bury_account
   match "reactivate_account" => "users#reactivate_account", :as => "reactivate_account"
   match "charge_succeeded" => "webhooks#charge_succeeded", :as => "charge_succeeded"
-  match "ship_order" => "orders#ship_order", :as => "ship_order"
+  match "ship_order/:id/" => "orders#ship_order", :as => :ship_order
+  match "unship_order/:id/" => "orders#unship_order", :as => :unship_order
 
   resources :users
   resources :sessions

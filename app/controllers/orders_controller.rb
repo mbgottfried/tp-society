@@ -42,7 +42,15 @@ class OrdersController < ApplicationController
   end
 
   def ship_order
+    @order = Order.find(params[:id])
     @order.status = "Order Shipped"
+    @order.save
+    redirect_to orders_url
+  end
+
+  def unship_order
+    @order = Order.find(params[:id])
+    @order.status = "Order Placed"
     @order.save
     redirect_to orders_url
   end
@@ -54,7 +62,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:status)
+      params.require(:order).permit(:status, :id)
     end
   
 end
