@@ -56,7 +56,7 @@ EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
           order = Order.create(
             :status => "Order Created",
             :user_id => user.id,
-            :label => shipment.postate_label.label_url,
+            :label => shipment.postage_label.label_url,
             :shipment_id => shipment.id
             )
 
