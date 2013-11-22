@@ -1,5 +1,12 @@
 class OrdersController < ApplicationController
 
+  before_filter :authenticate 
+
+  def authenticate
+    @user = current_user
+    redirect_to(root_path) unless @user.admin = "true"
+  end
+
   def index
     @orders = Order.all
   end
