@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
 
   def authenticate
     @user = current_user
-    redirect_to(root_path) unless @user.admin == true
+    redirect_to(root_path) unless @user and @user.admin == true
   end
 
   def index
