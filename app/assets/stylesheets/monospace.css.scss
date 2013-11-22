@@ -229,6 +229,7 @@ footer h5 {
 	font-weight: 600;
 	padding: 20px 0 0;
 	color: #ffffff;
+	font-size: 15px;
 }
 
 #register {
@@ -300,11 +301,11 @@ ul {
 }
 
 .left-right-first {
-	min-height: 500px;
+	min-height: 450px;
 }
 
 .left-right-second {
-	min-height: 370px;
+	min-height: 430px;
 }
 
 .left-right-third {
@@ -317,6 +318,10 @@ ul {
 
 .first-text {
 	margin: 115px 0 0;
+}
+
+.second-text {
+	margin: 70px 0 0;
 }
 
 .left-right-join {
