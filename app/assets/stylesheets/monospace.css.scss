@@ -17,6 +17,10 @@ body { font-family: "Open Sans",helvetica, arial, sans-serif;}
 	text-align: right;
 }
 
+.left {
+	text-align: left;
+}
+
 .top-down {
 	margin-top: 180px;
 }
@@ -117,6 +121,28 @@ h3 {
 	text-transform: uppercase;
 }
 
+h4 {
+	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
+	color: #428BCA;
+	font-size: 50px;
+}
+
+h5 {
+	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
+	color: #333333;
+	font-size: 30px;
+	font-weight: 400;
+}
+
+h5 a {
+	transition: color 0.2s ease 0s;
+}
+
+h5 a:hover {
+	text-decoration: none;
+	transition: color 0.2s ease 0s;
+}
+
 #home-hero .container {
 	padding: 120px 0 0;
 }
@@ -202,6 +228,7 @@ footer h5 {
 	font-family: "Open Sans",helvetica, arial, sans-serif;
 	font-weight: 600;
 	padding: 20px 0 0;
+	color: #ffffff;
 }
 
 #register {
@@ -261,4 +288,49 @@ ul {
 	background: #FFB7B7;
 	padding: 10px 10px;
 	margin: 0 0 10px;
+}
+
+#left-right {
+	background: #ffffff;
+	margin: 70px 0;
+}
+
+.tp-king {
+	margin: 70px 0 0;
+}
+
+.left-right-first {
+	min-height: 500px;
+}
+
+.left-right-second {
+	min-height: 370px;
+}
+
+.left-right-third {
+	min-height: 350px;
+}
+
+.red {
+	color: #B2293B;
+}
+
+.first-text {
+	margin: 115px 0 0;
+}
+
+.left-right-join {
+	background: #022437;
+	padding: 40px;
+	font-size: 40px;
+	color: #ffffff;
+	text-transform: uppercase;
+	transition: background 0.4s ease 0s;
+}
+
+.left-right-join:hover {
+	background: #428BCA;
+	text-decoration: none;
+	color: #ffffff;
+	transition: background 0.4s ease 0s;
 }
