@@ -105,6 +105,7 @@ h2 {
 	font-weight: 600;
 	margin: 0;
 	text-transform: uppercase;
+	color: #0B2436;
 }
 
 #home-hero h1, #home-hero h2 {
@@ -132,6 +133,10 @@ h5 {
 	color: #333333;
 	font-size: 30px;
 	font-weight: 400;
+}
+
+.price {
+	color: #B2293B;
 }
 
 h5 a {
@@ -327,7 +332,7 @@ ul {
 .left-right-join {
 	background: #022437;
 	padding: 40px;
-	font-size: 40px;
+	font-size: 28px;
 	color: #ffffff;
 	text-transform: uppercase;
 	transition: background 0.4s ease 0s;
