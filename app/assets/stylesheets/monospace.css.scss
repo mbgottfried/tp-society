@@ -305,8 +305,7 @@ ul {
 }
 
 #left-right {
-	background: #ffffff;
-	margin: 0 0 60px;
+	background: #ecf0f1;
 }
 
 .tp-king {
@@ -334,7 +333,7 @@ ul {
 }
 
 .second-text {
-	margin: 70px 0 0;
+	margin: 40px 0 0;
 }
 
 .left-right-join {
@@ -354,7 +353,16 @@ ul {
 }
 
 .grey-marketing {
-	background: #ecf0f1;
-	padding: 60px 0;
-	margin: 40px 0 60px;
+	background: #ffffff;
+	padding: 60px 0 0;
+	margin: 0px 0 60px;
+}
+
+.empty-roll {
+	bottom: 0;
+	position: absolute;
+}
+
+.padding-bottom {
+	padding: 0 0 60px;
 }
