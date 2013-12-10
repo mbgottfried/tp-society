@@ -19,11 +19,10 @@ Monospace::Application.routes.draw do
   resources :password_resets
 
   get "plans" => "pages#plans"
-  get "orders" => "admin#orders"
+  get "open_orders" => "orders#open_orders"
   get "goodbye" => "pages#goodbye"
   get "cancel" => "pages#cancel"
   get "reactivate" => "users#reactivate"
-  get "admin" => "admin#admin"
 
   
 

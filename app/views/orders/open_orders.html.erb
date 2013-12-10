@@ -1,14 +1,14 @@
 <div class="container top-down">
   <div class="page-header center">
-    <h1>All Orders</h1><br />
-      <div class="left col-md-6">
-        <%= link_to "View All Open Orders", open_orders_path, class: "btn btn-danger" %>
+    <h1>All Open Orders</h1><br />
+      <div class="left col-md-4">
+        <%= link_to "<< View All Orders", orders_path, class: "btn btn-danger" %>
       </div>
       <div class="right">
+        <%= link_to "Print Open Order Labels", "#", class: "btn btn-warning" %>
         <%= link_to "Mark All Orders As Shipped", "#", class: "btn btn-success" %>
       </div>
   </div>
-
 
   <% @orders.each do |order| %>
       <div class="panel panel-default">
@@ -37,7 +37,7 @@
             <%= order.created_at %>
           </div>
           <div class="col-md-2 right">
-            <%= link_to "Print Shipping Label", order.label, class: "btn btn-warning", target: "_blank" %><br />
+            <%= link_to "Print Label", "#", class: "btn btn-warning" %><br />
             <% if order.status == "Order Placed" %>
               <br /><%= link_to "Ship Order", ship_order_path(order), class: "btn btn-success" %>
             <% else %>

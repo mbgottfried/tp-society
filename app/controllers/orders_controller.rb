@@ -15,6 +15,10 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
   end
 
+  def open_orders
+    @orders = Order.find(:all, :conditions => { :status => 'Order Placed' })
+  end
+
   def new
     @order = Order.new
   end
@@ -52,14 +56,14 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.status = "Order Shipped"
     @order.save
-    redirect_to orders_url
+    redirect_to :back
   end
 
   def unship_order
     @order = Order.find(params[:id])
     @order.status = "Order Placed"
     @order.save
-    redirect_to orders_url
+    redirect_to :back
   end
 
   def new_shipment

@@ -1,14 +1,11 @@
 <div class="container top-down">
   <div class="page-header center">
-    <h1>All Orders</h1><br />
-      <div class="left col-md-6">
-        <%= link_to "View All Open Orders", open_orders_path, class: "btn btn-danger" %>
-      </div>
-      <div class="right">
-        <%= link_to "Mark All Orders As Shipped", "#", class: "btn btn-success" %>
-      </div>
+    <h1>All Open Ordersa</h1>
+     <div class="right">
+      <%= link_to "View Open Orders", open_orders_path %> | 
+      <%= link_to "Print Open Orders", "#" %>
+    </div>
   </div>
-
 
   <% @orders.each do |order| %>
       <div class="panel panel-default">

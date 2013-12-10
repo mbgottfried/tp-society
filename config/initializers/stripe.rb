@@ -56,13 +56,27 @@ EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
 
          order = Order.create(
            :status => "Order Placed",
-           :user_id => user.id
+           :user_id => user.id,
+           :order_placed => DateTime.now.to_date
            #:label => shipment.postage_label.label_url,
            #:shipment_id => shipment.id
            )
 
     end
   end
+
+  StripeEvent.setup do
+    subscribe 'invoice.payment_succeeded' do |event|
+      user = User.find_by_stripe_id(event.data.object.customer)
+
+      order = Order.create(
+        :status => "Order Placed",
+        :user_id => user.id,
+        :order_placed => DateTime.now.to_date
+      )
+      end
+  end
+
 
   StripeEvent.setup do
     subscribe 'charge.failed' do |event|
