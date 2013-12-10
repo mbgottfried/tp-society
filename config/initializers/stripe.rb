@@ -14,7 +14,7 @@ EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
  StripeEvent.setup do
     subscribe 'charge.succeeded' do |event|
     	user = User.find_by_stripe_id(event.data.object.customer)
-      
+
 #        to_address = EasyPost::Address.create(
 #            :name => user.name,
 #            :street1 => user.street1,
@@ -56,9 +56,9 @@ EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
 
          order = Order.create(
            :status => "Order Placed",
-           :user_id => user.id,
-           :label => shipment.postage_label.label_url,
-           :shipment_id => shipment.id
+           :user_id => user.id
+           #:label => shipment.postage_label.label_url,
+           #:shipment_id => shipment.id
            )
 
     end
