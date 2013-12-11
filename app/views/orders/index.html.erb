@@ -37,7 +37,6 @@
             <%= order.created_at %>
           </div>
           <div class="col-md-2 right">
-            <%= link_to "Print Shipping Label", order.label, class: "btn btn-warning", target: "_blank" %><br />
             <% if order.status == "Order Placed" %>
               <br /><%= link_to "Ship Order", ship_order_path(order), class: "btn btn-success" %>
             <% else %>
