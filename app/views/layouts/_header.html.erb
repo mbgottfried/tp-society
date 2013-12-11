@@ -27,9 +27,6 @@
               <li><%= link_to "Wipe Away Hunger", "#" %></li>
               <li><%= link_to "Log In", sign_in_path %></li>
             <% end %>
-            <% if current_user and current_user.admin = true %>
-              <li><%= link_to "Manage Orders", orders_path %></li>
-            <% end %>
           <li><%= link_to "twitter", "http://www.twitter.com/tp_society", target: "_blank", class: "header-twitter" %></li>
           <li><%= link_to "facebook", "https://www.facebook.com/TPsocy", target: "_blank", class: "header-facebook" %></li>
           <li><%= link_to "instagram", "http://www.instagram.com/tp_society", target: "_blank", class: "header-instagram" %></li>
