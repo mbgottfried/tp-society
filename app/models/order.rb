@@ -8,7 +8,6 @@ class Order < ActiveRecord::Base
   		csv << column_names
   		all.each do |order|
   			csv << order.attributes.values_at(*column_names)
-  			csv << order.user.name
   		end
   	end
   end
