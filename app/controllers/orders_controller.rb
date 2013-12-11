@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
   before_filter :authenticate 
+  require 'csv'
 
   def authenticate
     @user = current_user
@@ -8,7 +9,11 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.all
+    @orders = Order.order(:id)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @orders.to_csv }
+    end
   end
 
   def show
@@ -17,6 +22,10 @@ class OrdersController < ApplicationController
 
   def open_orders
     @orders = Order.find(:all, :conditions => { :status => 'Order Placed' })
+    respond_to do |format|
+      format.html
+      format.csv { send_data @orders.to_csv }
+    end
   end
 
   def new
