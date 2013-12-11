@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :status, :user_id, :label, :shipment_id
+  attr_accessible :status, :user_id, :label, :shipment_id, :name, :street1, :street2, :city, :state, :zip
 
   belongs_to :user
 
@@ -8,6 +8,7 @@ class Order < ActiveRecord::Base
   		csv << column_names
   		all.each do |order|
   			csv << order.attributes.values_at(*column_names)
+  			csv << order.user.name
   		end
   	end
   end
