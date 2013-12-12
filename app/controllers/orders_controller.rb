@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.order(:id)
+    @orders = Order.order(:id).paginate(:page => params[:page], :per_page => 50)
     respond_to do |format|
       format.html
       format.csv { send_data @orders.to_csv }
@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
   end
 
   def open_orders
-    @orders = Order.find(:all, :conditions => { :status => 'Order Placed' })
+    @orders = Order.find(:all, :conditions => { :status => 'Order Placed' }).paginate(:page => params[:page], :per_page => 50)
     respond_to do |format|
       format.html
       format.csv { send_data @orders.to_csv }

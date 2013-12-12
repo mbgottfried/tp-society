@@ -10,6 +10,7 @@ gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'easypost'
 gem 'jquery-rails'
 gem 'stripe_event'
+gem 'will_paginate', '~> 3.0'
 
 group :assets do
   gem 'sass-rails',   "~> 3.2.0"

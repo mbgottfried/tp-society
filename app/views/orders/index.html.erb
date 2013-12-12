@@ -1,11 +1,8 @@
 <div class="container top-down">
   <div class="page-header center">
     <h1>All Orders</h1><br />
-      <div class="left col-md-6">
+      <div class="left">
         <%= link_to "View All Open Orders", open_orders_path, class: "btn btn-danger" %>
-      </div>
-      <div class="right">
-        <%= link_to "Mark All Orders As Shipped", "#", class: "btn btn-success" %>
       </div>
   </div>
 
@@ -48,5 +45,7 @@
     </div>
 
   <% end %>
-
+  <div class="center">
+    <%= will_paginate @posts %>
+  </div>
 </div>
