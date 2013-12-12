@@ -5,8 +5,8 @@
         <%= link_to "<< View All Orders", orders_path, class: "btn btn-primary" %>
       </div>
       <div class="right">
-        <%= link_to "Print Open Order Labels", "#", class: "btn btn-warning" %>
-        <%= link_to "Mark All Orders As Shipped", "#", class: "btn btn-success" %>
+        <%= link_to "Print Open Order Labels", open_orders_path(format: "csv"), class: "btn btn-warning" %>
+        <%= link_to "Mark All Orders As Shipped", ship_all_path, class: "btn btn-success" %>
       </div>
   </div>
 

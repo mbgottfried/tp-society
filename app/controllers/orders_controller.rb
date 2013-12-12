@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
   end
 
   def open_orders
-    @orders = Order.find(:all, :conditions => { :status => 'Order Placed' }).paginate(:page => params[:page], :per_page => 50)
+    @orders = Order.where( :status => 'Order Placed' ).paginate(:page => params[:page], :per_page => 50)
     respond_to do |format|
       format.html
       format.csv { send_data @orders.to_csv }
@@ -72,6 +72,11 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.status = "Order Placed"
     @order.save
+    redirect_to :back
+  end
+
+  def ship_all
+    Order.update_all({ :status => "Order Shipped" })
     redirect_to :back
   end
 
