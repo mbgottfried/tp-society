@@ -1,5 +1,6 @@
 //= require jquery
 //= require shrink
+//= require bootstrap
 
 $(function() {
   $("#credit-card input, #credit-card select").attr("disabled", false);
