@@ -2,9 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'csv'
 require 'rails/all'
-require 'easypost'
-
-EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
