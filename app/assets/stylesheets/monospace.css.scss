@@ -41,12 +41,17 @@ div.topbar ul.nav {
 }
 
 .navbar-brand {
-	background: url(/assets/logo.png);
 	width: 328px;
 	height: 178px;
-	text-indent: -99999px;
 	display: block;
 }
+
+.navbar-brand img {
+	min-height: 100px;
+	margin: 0 auto;
+	width: auto; 
+}
+
 
 #home-hero {
 	background: url(/assets/home-hero.jpg) no-repeat center center fixed;
