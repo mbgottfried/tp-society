@@ -24,6 +24,10 @@ Monospace::Application.routes.draw do
   get "goodbye" => "pages#goodbye"
   get "cancel" => "pages#cancel"
   get "reactivate" => "users#reactivate"
+  get "terms" => "pages#terms"
+  get "privacy" => "pages#privacy"
+  get "feeding_america" => "pages#feeding_america"
+  get "how_it_works" => "pages#how_it_works"
 
   
 

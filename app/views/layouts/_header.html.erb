@@ -17,14 +17,14 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
-              <li><%= link_to "How It Works", "#" %></li>
-              <li><%= link_to "Wipe Away Hunger", "#" %></li>
+              <li><%= link_to "How It Works", how_it_works_path %></li>
+              <li><%= link_to "Wipe Away Hunger", feeding_america_path %></li>
               <li><%= link_to "Account Settings", edit_profile_path %></li>
               <li><%= link_to "Sign Out", sign_out_path %></li>
             <% else %>
               <li><%= link_to "Join Now", register_path, class: "btn-join" %></li>
-              <li><%= link_to "How It Works", "#" %></li>
-              <li><%= link_to "Wipe Away Hunger", "#" %></li>
+              <li><%= link_to "How It Works", how_it_works_path %></li>
+              <li><%= link_to "Wipe Away Hunger", feeding_america_path %></li>
               <li><%= link_to "Log In", sign_in_path %></li>
             <% end %>
           <li><%= link_to "twitter", "http://www.twitter.com/tp_society", target: "_blank", class: "header-twitter" %></li>

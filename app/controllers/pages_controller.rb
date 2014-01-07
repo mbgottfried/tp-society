@@ -9,4 +9,16 @@ class PagesController < ApplicationController
   def cancel
   end
 
+  def terms
+  end
+
+  def privacy
+  end
+
+  def feeding_america
+  end
+
+  def how_it_works
+  end
+
 end
