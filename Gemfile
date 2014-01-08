@@ -11,6 +11,8 @@ gem 'easypost'
 gem 'jquery-rails'
 gem 'stripe_event'
 gem 'will_paginate', '~> 3.0'
+gem 'rails_12factor'
+gem 'jquery-migrate-rails'
 
 group :assets do
   gem 'sass-rails',   "~> 3.2.0"
