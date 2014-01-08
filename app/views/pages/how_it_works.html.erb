@@ -1,26 +1,61 @@
 <div class="container top-down">
 	<div class="page-header center">
 		<h1>How It Works</h1>
-		<p>When You're In The Society It Means You'll Never Run Out Again</p>
+		<p>Never Run Out Again</p>
+	</div>
+	<div class="col-lg-12">
+	<h5 class="center">It's pretty simple really. We deliver four rolls to your door, every month, for $5.99.</h5>
+	</div>
+	<div class="col-lg-4 center">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h5>1. Join The Society</h5>
+			</div>
+			<div class="panel-body">
+				<p>Start by <%= link_to "signing up", register_path %>. You'll provide your name, email, a chosen password, your shipping address and a credit card that we'll keep on file. Don't worry, we keep all of your information very private.</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4 center">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h5>2. Check The Mail</h5>
+			</div>
+			<div class="panel-body">
+				<p>We'll ship your first four rolls as soon as you complete your registration. Delivery takes just a few days, so check your mailbox later this week and every month from here on out.</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4 center">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h5>3. Wipe Happy :)</h5>
+			</div>
+			<div class="panel-body">
+				<p>That's it! You can forget that feeling of horror when there is an empty roll staring you in the face. If you have any questions, comments or suggestions, drop us a line at <%= link_to "conceirge@toiletpapersociety.com", "mailto:conceirge@toiletpapersociety.com" %>.</p>
+			</div>
+		</div>
 	</div>
 	<div class="col-md-3 center">
-		<div class="alert alert-warning">I love TPS!</div>
+		<div class="alert alert-warning"><p class="testimonial">"It was actually pretty embarassing how often I used to run out of toilet paper. Not only for my guests, but also for myself. No more frantically jumping in the shower after I do my business! Thank You, Toilet Paper Society!"</p></div>
 		<%= image_tag "head1.jpg" %>
 		<h5>Parker Y.</h5>
 	</div>
 	<div class="col-md-3 center">
-		<div class="alert alert-warning">I love TPS!</div>
+		<div class="alert alert-warning"><p class="testimonial">"I live in a small New York City apartment, so there isn't really anywhere to store those large packages of toilet paper from the grocery store. Then I signed up for Toilet Paper Society... Monthly delivery = problem solved!"</p></div>
 		<%= image_tag "head2.jpg" %>
 		<h5>Katie G.</h5>
 	</div>
 	<div class="col-md-3 center">
-		<div class="alert alert-warning">I love TPS!</div>
+		<div class="alert alert-warning"><p class="testimonial">"My roommates and I used to steal toilet paper from the public bathroom in our lobby... We've used paper towels, leftover napkins. It was sad. Now, we know we don't have to fight about whose turn it is to buy TP."</p></div>
 		<%= image_tag "head3.jpg" %>
 		<h5>Tanner R.</h5>
 	</div>
 	<div class="col-md-3 center">
-		<div class="alert alert-warning">I love TPS!</div>
+		<div class="alert alert-warning"><p class="testimonial">"I signed my boyfriend up for Toilet Paper Society and now I'm way more comfortable hanging over at his place. It was pretty awkward before, but now I don't have to worry about staring at an empty roll when I'm over there."</p></div>
 		<%= image_tag "head4.jpg" %>
 		<h5>Nicole C.</h5>
 	</div>
 </div>
+
+<%= render 'layouts/footer' %>
