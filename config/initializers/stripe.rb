@@ -1,5 +1,5 @@
-  STRIPE_PUBLISHABLE_KEY = 'pk_test_ybms4ZSc8kP1FnekvyTbp7Wn'
-  Stripe.api_key = 'sk_test_cgajMxpMgtzyEy4fdPKC9zzd'
+  STRIPE_PUBLISHABLE_KEY => ENV['STRIPE_PUBLISHABLE_KEY']
+  Stripe.api_key => ENV['STRIPE_SECRET_KEY']
 
 #require 'easypost'
 #EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
