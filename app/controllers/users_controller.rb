@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
   def reactivate_account
     customer = Stripe::Customer.retrieve(current_user.stripe_id)
-    customer.update_subscription(:plan => "premium")
+    customer.update_subscription(:plan => "4pack")
     @user = current_user
     @user.update_attributes(subscribed: true)
     redirect_to root_path

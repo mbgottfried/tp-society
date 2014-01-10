@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20131211205327) do
     t.string   "last_4_digits"
     t.string   "stripe_id"
     t.boolean  "subscribed",             :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "street1"
     t.string   "street2"
     t.string   "city"

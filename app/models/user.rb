@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
         :metadata => {'Shipping Address' => stripe_address}
       )
       self.last_4_digits = customer.cards.data.first.last4
-      response = customer.update_subscription({:plan => "premium"})
+      response = customer.update_subscription({:plan => "4pack"})
       self.subscribed = true
     else
       customer = Stripe::Customer.retrieve(stripe_id)

@@ -43,9 +43,12 @@
               </div>
             </div>
           </div>
-          <div class="panel-footer">
-            <small>Enter a new password to change your password. Leave blank to keep your current password.</small>
-          </div>
+           <% if params[:action] == "new" && params[:controller] == "users" %>
+            <% else %>
+              <div class="panel-footer">
+                <small>Enter a new password to change your password. Leave blank to keep your current password.</small>
+              </div>
+            <% end %>
         </div>
 
         <div class="panel panel-default">
@@ -140,6 +143,11 @@
           </div>
           </div>
         </div>
+        <% if params[:action] == "new" && params[:controller] == "users" %>
+        <div class="panel-footer">
+          <small>Your credit card will be charged $6.99 upon registration and will renew each month. Cancel anytime.</small>
+        </div>
+        <% end %>
       </div>
           
 
