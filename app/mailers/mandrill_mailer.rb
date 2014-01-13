@@ -1,4 +1,4 @@
-class MandrillMailer < MandrillMailer::TemplateMailer
+class TransactionMailer < MandrillMailer::TemplateMailer
   default from: 'conceirge@toiletpapersociety.com'
 
   def welcome_mailer(user)
