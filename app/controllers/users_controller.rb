@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path, :notice => "Signed up!"
-      MandrillMailer.mandrill_welcome(@user).deliver
+      TransactionMailer.mandrill_welcome(@user).deliver
       UserMailer.admin_notice(@user).deliver
     else
       render :action => :new
