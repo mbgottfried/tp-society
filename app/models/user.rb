@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   end
 
   def custup
-    UserMailer.customer_updated(self).deliver
+    TransactionMailer.mandrill_welcome(self).deliver
   end
 
   def subdel

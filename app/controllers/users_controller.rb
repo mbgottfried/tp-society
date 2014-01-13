@@ -13,7 +13,6 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, :notice => "Signed up!"
       TransactionMailer.mandrill_welcome(@user).deliver
-      UserMailer.admin_notice(@user).deliver
     else
       render :action => :new
     end

@@ -8,4 +8,11 @@ class TransactionMailer < MandrillMailer::TemplateMailer
     subject: "Welcome to the Society!"
   end
 
+  def mandrill_update(user)
+  	@user = user
+  	mandrill_mail template: 'Account Update'
+  	to: user.email,
+  	subject: "Account Updated"
+  end
+
 end
