@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   end
 
   def chargefail
-    UserMailer.charge_failed(self).deliver
+    TransactionMailer.mandrill_failed(self).deliver
   end
 
   def update_stripe

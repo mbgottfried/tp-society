@@ -15,4 +15,9 @@ class TransactionMailer < MandrillMailer::TemplateMailer
   	subject: "Account Updated"
   end
 
+  def mandrill_failed(user)
+  	@user = user
+  	mandrill_mail template: 'Charge Failed',
+  	to: user.email,
+  	subject: "Account Updated"
 end
