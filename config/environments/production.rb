@@ -77,6 +77,10 @@ Monospace::Application.configure do
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
 
+  MandrillMailer.configure do |config|
+    config.api_key = ENV['MANDRILL_API_KEY']
+  end
+
   #Adding CDN Sumo
   config.action_controller.asset_host = ENV['CDN_SUMO_URL']
   config.static_cache_control = "public, max-age=2592000"
