@@ -19,7 +19,6 @@ Monospace::Application.routes.draw do
   resources :sessions
   resources :password_resets
 
-  get "plans" => "pages#plans"
   get "open_orders" => "orders#open_orders"
   get "goodbye" => "pages#goodbye"
   get "cancel" => "pages#cancel"
