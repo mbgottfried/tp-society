@@ -29,7 +29,7 @@ Monospace::Application.configure do
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
@@ -76,4 +76,10 @@ Monospace::Application.configure do
   :password             => ENV['MANDRILL_APIKEY'],
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
+
+  #Adding CDN Sumo
+  config.action_controller.asset_host = ENV['CDN_SUMO_URL']
+  config.static_cache_control = "public, max-age=2592000"
+  config.assets.digest = true
+
 end

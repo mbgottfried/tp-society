@@ -32,4 +32,9 @@ class UserMailer < ActionMailer::Base
     mail :to => user.email, :subject => "Sorry to see you go :("
   end
 
+  def admin_mailer(user)
+    @user = user
+    mail :to => "mike@eastmontgroup.com", :subject => "New Customer Signup"
+  end
+
 end
