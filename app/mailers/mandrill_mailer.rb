@@ -21,4 +21,12 @@ class TransactionMailer < MandrillMailer::TemplateMailer
   	to: user.email,
   	subject: "Please Update Your Account"
   end
+
+  def mandrill_cancel(user)
+  	@user = user
+  	mandrill_mail template: 'Subscription Cancelled',
+  	to: user.email,
+  	subject: "We're Sorry To See You Go"
+  end
+
 end

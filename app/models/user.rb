@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   end
 
   def subdel
-    UserMailer.subscription_deleted(self).deliver
+    TransactionMailer.mandrill_cancel(self).deliver
   end
 
   def chargefail
