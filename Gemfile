@@ -12,6 +12,7 @@ gem 'easypost'
 gem 'stripe_event'
 gem 'will_paginate', '~> 3.0'
 gem 'jquery-migrate-rails'
+gem 'mandrill_mailer'
 
 group :assets do
   gem 'sass-rails',   "~> 3.2.0"
