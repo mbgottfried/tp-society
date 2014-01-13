@@ -53,6 +53,7 @@ div.topbar ul.nav {
 	min-height: 75px;
 	margin: 0 auto;
 	width: auto; 
+	position: absolute;
 }
 
 
@@ -193,14 +194,13 @@ h5 a:hover {
 }
 
 .btn-join {
-	background: #b2293b;
-	color: #ffffff !important; 
+	color: #b2293b !important; 
 	margin-top: -1px;
 	transition: background .4s;
 }
 
 .btn-join:hover {
-	background: #801422 !important;
+	color: #801422 !important;
 }
 
 #how-it-works {
