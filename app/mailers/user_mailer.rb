@@ -14,7 +14,6 @@ class UserMailer < ActionMailer::Base
 
   def welcome_mailer(user)
     @user = user
-    mandrill_mail template: 'toilet-paper-society-welcome'
     mail :to => user.email, :subject => "Welcome to the Society!"
   end
 
