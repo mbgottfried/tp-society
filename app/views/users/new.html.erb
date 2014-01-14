@@ -10,11 +10,26 @@
 					<h2>What You Get</h2>
 				</div>
 				<div class="panel-body center">
-					<h4>The Four Pack</h4>
+					<h5>The Four Pack</h5>
 					<%= image_tag "4-roll-sm.png" %>
 					<p style="margin-top: 15px;">Your membership in The Society includes four plush, soft rolls delivered to your door each month. When you're a member you'll never run out again.</p>
 					<h5 class="price">$6.99/month</h5>
 				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading center">
+					<h2>What They Get</h2>
+				</div>
+				<div class="panel-body center">
+					<%= image_tag "feeding-america-small.png" %>
+					<p style="margin-top: 15px;">For every order we ship, we'll dontate a roll to Feeding America. Because it sucks to run out, no matter who you are.</p>
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-md-8">
+			<%= render :partial => 'users/form', :locals => {:user => @user} %>
+			<div class="bottom-padding">
 			</div>
 			<div class="panel panel-danger">
 				<div class="panel-heading center">
@@ -24,13 +39,8 @@
 					If you're here, it means you're one of our early adopters and most valued prospective members. Members who sign up before March 1st will get their first month of Toilet Paper FREE!
 				</div>
 				<div class="panel-footer">
-					<small>We'll refund your first month's order once your second order ships.</small>
+					<small>We'll refund your first month's order within 28 days of receiving your membership.</small>
 				</div>
-			</div>
-		</div>
-		<div class="col-md-8">
-			<%= render :partial => 'users/form', :locals => {:user => @user} %>
-			<div class="bottom-padding">
 			</div>
 		</div>
 		
