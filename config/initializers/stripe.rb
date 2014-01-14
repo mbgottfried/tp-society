@@ -5,7 +5,7 @@
 #EasyPost.api_key = 'KCt9J7ZWaxjY01LgHSDs0A'
 
   StripeEvent.setup do 
-    subscribe 'customer.subscription.created' |event|
+    subscribe 'customer.subscription.created' do |event|
       user = User.find_by_stripe_id(event.data.object.customer)
       user.subcreate
     end
