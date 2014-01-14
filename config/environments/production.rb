@@ -87,4 +87,7 @@ Monospace::Application.configure do
   config.static_cache_control = "public, max-age=2592000"
   config.assets.digest = true
 
+  #Force SSL
+  config.force_ssl = true
+
 end
