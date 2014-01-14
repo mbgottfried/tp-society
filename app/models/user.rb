@@ -44,10 +44,6 @@ class User < ActiveRecord::Base
     TransactionMailer.mandrill_failed(self).deliver
   end
 
-  def subcreate
-    TransactionMailer.mandrill_create(self).deliver
-  end
-
   def update_stripe
     if stripe_id.nil?
       if !stripe_token.present?

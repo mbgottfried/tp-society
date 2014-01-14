@@ -29,11 +29,4 @@ class TransactionMailer < MandrillMailer::TemplateMailer
   	subject: "We're Sorry To See You Go"
   end
 
-  def mandrill_create(user)
-    @user = user
-    mandrill_mail template: 'Subscription Created',
-    to: 'mike@eastmontgroup.com,justin@eastmontgroup.com,mark@eastmontgroup.com,williamhwatts@gmail.com',
-    subject: "New Customer"
-  end
-
 end
