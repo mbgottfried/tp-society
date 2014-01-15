@@ -29,9 +29,6 @@
 			
 		</div>
 		<div class="col-md-8">
-			<%= render :partial => 'users/form', :locals => {:user => @user} %>
-			<div class="bottom-padding">
-			</div>
 			<div class="panel panel-danger">
 				<div class="panel-heading center">
 					<h5>First Month Free!</h5>
@@ -43,6 +40,10 @@
 					<small>We'll refund your first month's order within 28 days of receiving your membership.</small>
 				</div>
 			</div>
+			<%= render :partial => 'users/form', :locals => {:user => @user} %>
+			<div class="bottom-padding">
+			</div>
+			
 		</div>
 		
 </div>
