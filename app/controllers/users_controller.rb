@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, :notice => "Signed up!"
+      redirect_to clubhouse_path, :notice => "Signed up!"
       TransactionMailer.mandrill_welcome(@user).deliver
     else
       render :action => :new
