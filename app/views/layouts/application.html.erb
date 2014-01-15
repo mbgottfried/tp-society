@@ -22,7 +22,7 @@
         </div>
       </div>
       <%= yield %>
-      <% if Rails.env.production? == "true" %>
+      <% if Rails.env.production? == true %>
         <%= render 'layouts/googlea' %>
       <% else %>
       <% end %>
