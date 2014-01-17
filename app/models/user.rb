@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
     "#{street1}, #{street2}, #{city}, #{state} #{zip}"
   end
 
+  def tax_state
+    "#{state}"
+  end
+
   def custup
     TransactionMailer.mandrill_update(self).deliver
   end
@@ -60,7 +64,11 @@ class User < ActiveRecord::Base
         :metadata => {'Shipping Address' => stripe_address}
       )
       self.last_4_digits = customer.cards.data.first.last4
-      response = customer.update_subscription({:plan => "4pack"})
+      if tax_state == "MS"
+        response = customer.update_subscription({:plan => "4packtax"})
+      else
+        response = customer.update_subscription({:plan => "4pack"})
+      end
       self.subscribed = true
     else
       customer = Stripe::Customer.retrieve(stripe_id)
