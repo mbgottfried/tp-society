@@ -105,7 +105,7 @@ div.topbar ul.nav {
 
 h1 {
 	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
-	font-size: 7em;
+	font-size: 5em;
 	font-weight: 900;
 	margin: 0;
 	text-transform: uppercase;
@@ -120,6 +120,10 @@ h2 {
 	text-transform: uppercase;
 	color: #0B2436;
 	line-height: 1em;
+}
+
+#home-hero h1 {
+	font-size: 7em;	
 }
 
 #home-hero h1, #home-hero h2, #home-hero h5 {
