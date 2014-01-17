@@ -17,8 +17,11 @@
 			<div class="col-md-4">
 				<%= link_to image_tag("logo.png"), root_path %>
 			</div>
+			<% if current_user %>
+			<% else %>
 			<div class="col-md-4 join-footer">
 				<%= link_to "Join The Society", register_path, class: "btn btn-lg btn-danger" %>
 			</div>
+			<% end %>
 		</div>
 </footer>

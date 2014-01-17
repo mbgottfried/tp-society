@@ -2,25 +2,21 @@
 	<div class="page-header center">
 		<h1>Wipe Away Hunger</h1>
 		<p>Helping Those In Need</p>
-	</div> 
-	<div class="col-md-8 col-md-offset-2 center">
-		<%= image_tag "feeding-america-small.png" %>
-		<p>Toilet Paper Society has teamed up with Feeding America to help those in need. For every order we ship, we'll donate one roll of toilet paper to those in need.<p>
+	</div>
+	<div class="row bottomed">
+		<div class="col-md-7">
+			<h4>We're Giving Back in the form of Toilet Paper!</h4>
+			<br />
+			<p>Every time we ship an order, we donate one roll of toilet paper to those in need.</p>
+
+			<p>When you join Toilet Paper Society, you not only quit running out of toilet paper yourself, but you help someone less fortunate have toilet paper too.</p>
+
+			<p>Help us end the scarcity of toilet paper across the country through our partnership with Feeding America.</p><br />
 			<%= link_to "Get Started Now", register_path, class: "btn btn-lg btn-primary" %>
-	</div>
-	<div class="col-md-5">
-		<%= image_tag "4-roll-home.png", class: "4-roll", width: "425" %>
-	</div>
-
-	<div class="col-md-7">
-		<h5 class="second-text">We're Giving Back in the form of Toilet Paper!</h5>
-		<br />
-		<p>Every time we ship an order, we donate one roll of toilet paper to those in need.</p>
-
-		<p>When you join Toilet Paper Society, you not only quit running out of toilet paper yourself, but you help someone less fortunate have toilet paper too.</p>
-
-		<p>Help us end the scarcity of toilet paper across the country through our partnership with Feeding America.</p>
-
+		</div>
+		<div class="col-md-5">
+			<%= image_tag "feeding-america-small.png" %>
+		</div>
 	</div>
 </div>
 <%= render 'layouts/footer' %>
