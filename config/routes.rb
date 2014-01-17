@@ -28,6 +28,7 @@ Monospace::Application.routes.draw do
   get "feeding_america" => "pages#feeding_america"
   get "how_it_works" => "pages#how_it_works"
   get "clubhouse" => "pages#clubhouse"
+  get "our_tp" => "pages#our_tp"
 
   
 
