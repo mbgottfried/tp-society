@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  before_save { self.email = email.downcase } 
+  before_save { self.email = email.downcase }
+  before_save { self.name = name.capitalize }
+  before_save { self.city = city.capitalize }
+  before_save { self.state = state.upcase } 
 
   attr_accessible :name, :email, :password, :password_confirmation, :stripe_token, :last_4_digits, :street1, :street2, :city, :state, :zip, :subscribed
 
