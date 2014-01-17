@@ -106,7 +106,7 @@ div.topbar ul.nav {
 
 h1 {
 	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
-	font-size: 55px;
+	font-size: 7em;
 	font-weight: 900;
 	margin: 0;
 	text-transform: uppercase;
@@ -114,7 +114,7 @@ h1 {
 
 h2 {
 	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
-	font-size: 44.5px;
+	font-size: 4em;
 	font-weight: 600;
 	margin: 0;
 	text-transform: uppercase;
@@ -163,7 +163,7 @@ h5 a:hover {
 }
 
 #home-hero .container {
-	padding: 100px 0 0;
+	padding: 40px 0 0;
 }
 
 .dgcwypd {
@@ -423,4 +423,22 @@ ul {
 
 .bottomed {
 	margin: 0 0 40px;
+}
+
+.join-footer {
+	text-align: center;
+	padding: 60px 0 40px;
+}
+
+.join-footer .btn-lg {
+	font-size: 1.7em;
+	padding: 15px 20px;
+	background: #B2293B;
+	border-color: #B2293B;
+}
+
+.join-footer .btn-lg:hover {
+	background: #801422;
+	border-color: #801422;
+	transition: background 0.4s ease 0s;
 }
