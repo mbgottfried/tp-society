@@ -21,7 +21,4 @@ class PagesController < ApplicationController
   def clubhouse
   end
 
-  def our_tp
-  end
-
 end
