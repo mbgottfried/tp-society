@@ -100,7 +100,13 @@ div.topbar ul.nav {
 }
 
 .navbar-nav > li > a {
-	padding-top: 35px;
+	margin-top: 22px;
+	transition: color 0.2s ease 0s;
+}
+
+.navbar-nav > li > a:hover {
+	color: #B2293B !important;
+	transition: color 0.2s ease 0s;
 }
 
 h1 {
@@ -211,13 +217,15 @@ h5 a:hover {
 }
 
 .btn-join {
-	color: #b2293b !important; 
+	color: #ffffff !important; 
 	margin-top: -1px;
 	transition: background .4s;
+	background: #b2293b;
+	border-radius: 5px;
 }
 
 .btn-join:hover {
-	color: #801422 !important;
+	background: #801422 !important;
 }
 
 #how-it-works {
