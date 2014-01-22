@@ -4,9 +4,9 @@ Monospace::Application.routes.draw do
   mount StripeEvent::Engine => '/webhooks'
   root :to => "home#index"
   match 'register' => 'users#new', :as => :register
-  match "sign_in" => "sessions#new", :as => :sign_in
+  match "sign_in" => "sessions#new", :as => :sign_in, :path => '/sign-in'
   match "sign_out" => "sessions#destroy", :as => :sign_out
-  match "edit_profile" => "users#edit", :as => :edit_profile
+  match "edit_profile" => "users#edit", :as => :edit_profile, :path => '/edit-profile'
   match "cancel_account" => "users#destroy", :as => :cancel_account
   match "delete_account" => "users#bury", :as => :bury_account
   match "reactivate_account" => "users#reactivate_account", :as => "reactivate_account"
@@ -25,9 +25,10 @@ Monospace::Application.routes.draw do
   get "reactivate" => "users#reactivate"
   get "terms" => "pages#terms"
   get "privacy" => "pages#privacy"
-  get "feeding_america" => "pages#feeding_america"
-  get "how_it_works" => "pages#how_it_works"
+  get "feeding_america" => "pages#feeding_america", :path => '/feeding-america'
+  get "how_it_works" => "pages#how_it_works", :path => '/how-it-works'
   get "clubhouse" => "pages#clubhouse"
+
 
   
 
