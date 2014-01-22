@@ -104,11 +104,6 @@ div.topbar ul.nav {
 	transition: color 0.2s ease 0s;
 }
 
-.navbar-nav > li > a:hover {
-	color: #B2293B !important;
-	transition: color 0.2s ease 0s;
-}
-
 h1 {
 	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
 	font-size: 5em;
@@ -226,6 +221,7 @@ h5 a:hover {
 
 .btn-join:hover {
 	background: #801422 !important;
+	color: #ffffff !important; 
 }
 
 #how-it-works {
