@@ -12,7 +12,11 @@
 			<p>When you join Toilet Paper Society, you not only quit running out of toilet paper yourself, but you help someone less fortunate with their daily toiletry needs.</p>
 
 			<p>Help us help others through our partnership with Feeding America.</p><br />
-			<%= link_to "Get Started Now", register_path, class: "btn btn-lg btn-primary" %>
+			<% if current_user %>
+				<%= link_to "Join Now", clubhouse_path, class: "btn btn-lg btn-primary" %>
+			<% else %>
+				<%= link_to "Join Now", register_path, class: "btn btn-lg btn-primary" %>
+			<% end %>
 		</div>
 		<div class="col-md-5">
 			<%= image_tag "feeding-america-small.png" %>
@@ -20,15 +24,14 @@
 	</div>
 </div>
 
-	<div class="gray">
+	<div class="gray about-feeding">
 		<div class="container">
 			<div class="col-md-5">
 				<ul class="list-group center">
-					<li class="list-group-item theirs"><h5>Feeding America</h5><p>Quick Facts</p></li>
+					<li class="list-group-item theirs"><h5>Quick Facts</h5></li>
 					<li class="list-group-item">More than 49 million Americans, including 16 million children, are 							struggling with hunger.</li>
 					<li class="list-group-item">37 million Americans receive food and groceries from Feeding America 							each year, including nearly 14 million children and 3 million seniors.</li>
 					<li class="list-group-item">5.7 million Americans are fed by the Feeding America network every week.</li>
-					<li class="list-group-item"><%= link_to "Learn more at www.feedingamerica.org", "http://feedingamerica.org" %></li>
 				</ul>
 			</div>
 			<div class="col-md-7">

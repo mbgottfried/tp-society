@@ -9,6 +9,7 @@
 					<li><%= link_to "Join Now", register_path %></li>
 					<% end %>
 					<li><%= link_to "How It Works", how_it_works_path %></li>
+					<li><%= link_to "Wipe Away Hunger", feeding_america_path %></li>
 					<li><%= link_to "Privacy Policy", privacy_path, target: "_new" %></li>
 					<li><%= link_to "Terms of Service", terms_path, target: "_new" %></li>
 			</ul>	
@@ -18,9 +19,15 @@
 				<%= link_to image_tag("logo.png"), root_path %>
 			</div>
 			<% if current_user %>
+			<div class="col-md-4 join-footer">
+				<%= link_to "Invite Friends on Facebook", "http://www.facebook.com/share.php?u=https://www.toiletpapersociety.com", class: "btn btn-primary" %><br />
+				<%= link_to "Invite Followers on Twitter", "http://twitter.com/home?status=Toilet%20Paper%20Delivered%20Each%20Month!%20@tp_society%20Join%20at%20https://www.toiletpapersociety.com", class: "btn btn-primary", target: "_blank" %>
+			</div>
 			<% else %>
 			<div class="col-md-4 join-footer">
-				<%= link_to "Join The Society", register_path, class: "btn btn-lg btn-danger" %>
+				<%= link_to "Join Now", register_path, class: "btn btn-danger" %><br />
+				<%= link_to "Invite Friends on Facebook", "http://www.facebook.com/share.php?u=https://www.toiletpapersociety.com", class: "btn btn-primary" %><br />
+				<%= link_to "Invite Followers on Twitter", "http://twitter.com/home?status=Toilet%20Paper%20Delivered%20Each%20Month!%20@tp_society%20Join%20at%20https://www.toiletpapersociety.com", class: "btn btn-primary", target: "_blank" %>
 			</div>
 			<% end %>
 		</div>

@@ -3,7 +3,11 @@
 	  		<h1>DON'T GET CAUGHT</h1>
 	  		<h2>WITH YOUR PANTS DOWN</h2>
 	  		<h3>4 Rolls for $6.99/month</h3>
-  			<p><%= link_to "BECOME A MEMBER", register_path, class: "btn btn-get-started" %></p>
+	  		<% if current_user %>
+	  			<p><%= link_to "JOIN NOW", clubhouse_path, class: "btn btn-get-started" %></p>
+	  		<% else %>
+  				<p><%= link_to "JOIN NOW", register_path, class: "btn btn-get-started" %></p>
+  			<% end %>
 
 	</div>
 </div>

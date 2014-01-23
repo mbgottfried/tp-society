@@ -44,17 +44,17 @@
 <div class="gray">
 	<div class="container">
 		<div class="col-lg-4 center">
-			<div class="panel panel-default">
+			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<h5>1. Join The Society</h5>
 				</div>
 				<div class="panel-body">
-					<p>Start by <%= link_to "signing up", register_path %>. You'll provide your name, email, a chosen password, your shipping address and a credit card that we'll keep on file. Don't worry, we keep all of your information private.</p>
+					<p>Start by <% if current_user %><%= link_to "signing up", clubhouse_path %><% else %><%= link_to "signing up", register_path %><% end %>. You'll provide your name, email, a chosen password, your shipping address and a credit card that we'll keep on file. Don't worry, we keep all of your information private.</p>
 				</div>
 			</div>
 		</div>
 		<div class="col-lg-4 center">
-			<div class="panel panel-default">
+			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<h5>2. Check The Mail</h5>
 				</div>
@@ -64,7 +64,7 @@
 			</div>
 		</div>
 		<div class="col-lg-4 center">
-			<div class="panel panel-default">
+			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<h5>3. Wipe Happy :)</h5>
 				</div>

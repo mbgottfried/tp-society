@@ -276,7 +276,7 @@ h5 {
 footer h5 {
 	font-family: "Open Sans",helvetica, arial, sans-serif;
 	font-weight: 600;
-	padding: 20px 0 0;
+	padding: 5px 0 0;
 	color: #ffffff;
 	font-size: 15px;
 }
@@ -438,20 +438,12 @@ ul {
 
 .join-footer {
 	text-align: center;
-	padding: 60px 0 40px;
+	padding: 25px 0 40px;
 }
 
-.join-footer .btn-lg {
-	font-size: 1.7em;
-	padding: 15px 20px;
-	background: #B2293B;
-	border-color: #B2293B;
-}
-
-.join-footer .btn-lg:hover {
-	background: #801422;
-	border-color: #801422;
-	transition: background 0.4s ease 0s;
+.join-footer .btn {
+	width: 250px;
+	margin: 0 0 15px;
 }
 
 .social-link {
@@ -475,7 +467,7 @@ ul {
 }
 
 .panel-heading h2 {
-	font-size: 2.5em;
+	font-size: 2em;
 }
 
 .list-group-how {
@@ -504,4 +496,17 @@ ul {
 
 .padded {
 	padding: 40px 0 0;
+}
+
+.feeding {
+	min-height: 455px;
+	padding: 25px 0 0;
+}
+
+.first-text {
+	margin: 80px 0 0;
+}
+
+.about-feeding h4 {
+	margin-top: 0;
 }

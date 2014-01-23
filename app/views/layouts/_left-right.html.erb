@@ -5,9 +5,9 @@
 			<%= image_tag "emptyroll.png" %>
 		</div>
 		<div class="col-md-7">
-			 <h4 class="second-text">Running out sucks.</h4>
+			 <h4 class="first-text">Running out sucks.</h4>
 			 <h5>
-			 	We here at Toilet Paper Society are all about avoiding that awkward moment. Don't fall victim to the empty cardboard tube. <%= link_to "Become a member today", register_path %> and we'll deliver toilet paper to you every month. 
+			 	We here at Toilet Paper Society are all about avoiding that awkward moment. Don't fall victim to the empty cardboard tube. <% if current_user %><%= link_to "Become a member today", clubhouse_path %><% else %><%= link_to "Become a member today", register_path %><% end %> and we'll deliver toilet paper to you every month. 
 			 </h5>
 			</div>
 	</div>
@@ -27,7 +27,7 @@
 	</div>
 	</div>
 	</div>
-	<div class="container marketing">
+	<div class="container marketing feeding">
 	<div class="row featurette padding-bottom">
 		<div class="col-md-5">
 			<%= image_tag "feeding-america-red.png" %>
