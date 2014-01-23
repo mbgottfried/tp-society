@@ -41,5 +41,10 @@ module Monospace
     config.filter_parameters += [:password]
     config.assets.enabled = true
     config.assets.version = '1.0'
+
+    # config/application.rb
+    # Forces application to not load models or access the DB when precompiling
+    # assets
+    config.assets.initialize_on_precompile = false
   end
 end
